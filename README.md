@@ -1,4 +1,3 @@
-# cp2021tStack
+# Projeto da disciplina Calculo de Programas 2020/2021
 
-- PDF e .lhs na pasta app
-- .hs na pasta src
+
