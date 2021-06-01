@@ -1018,9 +1018,12 @@ ad v = p2 . cataExpAr (ad_gen v)
 Definir:
 
 \begin{code}
-outExpAr = undefined
+outExpAr (X) = i1 ()
+outExpAr (N x) = i2(i1(x))
+outExpAr (Bin op a b) = i2(i2(i1( (op, (a,b) ) )))
+outExpAr (Un a b) = i2(i2(i2(a,b)))
 ---
-recExpAr = undefined
+recExpAr = id -|- (id -|- (f >< (id >< id) -|- f >< id))
 ---
 g_eval_exp = undefined
 ---
