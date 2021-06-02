@@ -1023,19 +1023,35 @@ outExpAr (N x) = i2(i1(x))
 outExpAr (Bin op a b) = i2(i2(i1( (op, (a,b) ) )))
 outExpAr (Un a b) = i2(i2(i2(a,b)))
 ---
-recExpAr = id -|- (id -|- (f >< (id >< id) -|- f >< id))
+recExpAr f = baseExpAr id id id f f id f ;
 ---
-g_eval_exp = undefined
+g_eval_exp n (Left a) = n;
+g_eval_exp n (Right(Left(a))) = a;
+g_eval_exp n (Right(Right(Left(Product, (a,b))))) = a * b;
+g_eval_exp n (Right (Right (Left (Sum, (a,b)))))= a + b;
+g_eval_exp n (Right(Right(Right(Negate, b)))) = (-1) * b;
+g_eval_exp n (Right(Right(Right(E, b)))) = expd b;
 ---
-clean = undefined
+clean (Bin Product _ (N 0)) = outExpAr $ N 0
+clean (Bin Product (N 0) _) = outExpAr $ N 0 
+clean x = outExpAr x
 ---
-gopt = undefined
+gopt a = g_eval_exp a 
 \end{code}
 
 \begin{code}
+
+k1 (Left a) = (i1,N 0);
+k1 (Right(Left(a))) = (a,N 1);
+k1 (Right(Right(Left(Product, ((a,b),(c,d)))))) = (Bin Product a c, Bin Sum (Bin Product a d) (Bin Product c b));
+k1 (Right (Right (Left (Sum, ((a,b), (c,d)))))) = (Bin Sum a c, Bin Sum b d);
+k1 (Right(Right(Right(Negate, (a,b))))) = (Un Negate a, Un Negate b);
+k1 (Right(Right(Right(E, (a,b))))) = (Un E a, Bin Product (Un E a) b);
+
 sd_gen :: Floating a =>
     Either () (Either a (Either (BinOp, ((ExpAr a, ExpAr a), (ExpAr a, ExpAr a))) (UnOp, (ExpAr a, ExpAr a)))) -> (ExpAr a, ExpAr a)
-sd_gen = undefined
+
+sd_gen = k1;
 \end{code}
 
 \begin{code}
