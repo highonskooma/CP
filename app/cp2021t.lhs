@@ -1041,28 +1041,28 @@ gopt a = g_eval_exp a
 
 \begin{code}
 
---k1 (Left a) = (N 1,N 0);
---k1 (Right(Left(N a,b))) = (a,N 1);
---k1 (Right(Right(Left(Product, ((a,b),(c,d)))))) = (Bin Product a c, Bin Sum (Bin Product a d) (Bin Product c b));
---k1 (Right (Right (Left (Sum, ((a,b), (c,d)))))) = (Bin Sum a c, Bin Sum b d);
---k1 (Right(Right(Right(Negate, (a,b))))) = (Un Negate a, Un Negate b);
---k1 (Right(Right(Right(E, (a,b))))) = (Un E a, Bin Product (Un E a) b);
+k1 (Left ()) = (X,N 1);
+k1 (Right(Left(a))) = (N a,N 0);
+k1 (Right(Right(Left(Product, ((a,b),(c,d)) )))) = (Bin Product a c, Bin Sum (Bin Product a d) (Bin Product b c));
+k1 (Right (Right (Left (Sum, ((a,b), (c,d)) )))) = (Bin Sum a c, Bin Sum b d);
+k1 (Right(Right(Right(Negate, (a,b) )))) = (Un Negate a, Un Negate b);
+k1 (Right(Right(Right(E, (a,b) )))) = (Un E a, Bin Product (Un E a) b);
 
 sd_gen :: Floating a =>
     Either () (Either a (Either (BinOp, ((ExpAr a, ExpAr a), (ExpAr a, ExpAr a))) (UnOp, (ExpAr a, ExpAr a)))) -> (ExpAr a, ExpAr a)
 
-sd_gen = undefined
+sd_gen = k1
 \end{code}
 
 \begin{code}
 
-ad_t n (Left a) = 0;
-ad_t n (Right(Left(a)) = 1;
-ad_t n (Right(Right(Left(Product, (a,b)))))) = (a*d) + (c*b);
-ad_t n (Right (Right (Left (Sum, (a,b))))))= b+d;
-ad_t n (Right(Right(Right(Negate, (a,b))))) = (-1) * (b);
-ad_t n (Right(Right(Right(E, a)))) = (expd a) * b;
-o belho é moço
+ad_t n (Left ()) = (n,1);
+ad_t n (Right(Left(a))) = (a,0);
+ad_t n (Right(Right(Left(Product, ((a,b),(c,d)) )))) = ( (a*c) , (a*d) + (b*c));
+ad_t n (Right (Right (Left (Sum, ((a,b),(c,d)) )))) = (a + c , b + d);
+ad_t n (Right(Right(Right(Negate, (a,b) )))) = ((-1) * (a) , (-1) * (b));
+ad_t n (Right(Right(Right(E, (a,b) )))) = ( (expd a) , (expd a) * b );
+
 
 
 ad_gen v = ad_t v; 
