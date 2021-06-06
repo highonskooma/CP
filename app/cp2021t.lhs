@@ -1064,16 +1064,15 @@ ad_t n (Right(Right(Right(Negate, (a,b) )))) = ((-1) * (a) , (-1) * (b));
 ad_t n (Right(Right(Right(E, (a,b) )))) = ( (expd a) , (expd a) * b );
 
 
-
 ad_gen v = ad_t v; 
 \end{code}
 
 \subsection*{Problema 2}
 Definir
 \begin{code}
-loop = undefined
-inic = undefined
-prj = undefined
+loop (c,t,h,s,p) = (div (c*t) h , t+s , h+p , s+8 , p+2); 
+inic = (1,2,2,10,4);
+prj (c,t,h,s,p) = c;   
 \end{code}
 por forma a que
 \begin{code}
@@ -1102,11 +1101,16 @@ hyloAlgForm = undefined
 
 Solução para listas não vazias:
 \begin{code}
-avg = p1.avg_aux
+avg = p1 . avg_aux
 \end{code}
 
 \begin{code}
-avg_aux = undefined
+
+avg_gene i1() = const (0,0);
+--avg_gene i2() = ( div (p1 + ((p1 . p2)*(p2 . p2))) ((p2 . p2)+1) , (p2 . p2)+1 ) ;
+avg_gene i2() = div . split (mul . split (p1 . p2) (p2 . p2) ) (succ . p2 . p2)
+
+avg_aux = cataList avg_gene;
 \end{code}
 Solução para árvores de tipo \LTree:
 \begin{code}
