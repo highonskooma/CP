@@ -1070,9 +1070,9 @@ ad_gen v = ad_t v;
 \subsection*{Problema 2}
 Definir
 \begin{code}
-loop (c,t,h,s,p) = (div (c*t) h , t+s , h+p , s+8 , p+2); 
-inic = (1,2,2,10,4);
-prj (c,t,h,s,p) = c;   
+loop (c,t,h,s,p) = (div (c*t) h , t+s , h+p , s+8 , p+2) 
+inic = (1,2,2,10,4)
+prj (c,t,h,s,p) = c   
 \end{code}
 por forma a que
 \begin{code}
@@ -1106,11 +1106,11 @@ avg = p1 . avg_aux
 
 \begin{code}
 
-avg_gene i1() = const (0,0);
+b = const (0,0);
 --avg_gene i2() = ( div (p1 + ((p1 . p2)*(p2 . p2))) ((p2 . p2)+1) , (p2 . p2)+1 ) ;
-avg_gene i2() = div . split (mul . split (p1 . p2) (p2 . p2) ) (succ . p2 . p2)
+q i2 () = div . split (mul . split (p1 . p2) (p2 . p2) ) (succ . p2 . p2)
 
-avg_aux = cataList avg_gene;
+avg_aux = cataList (either b q)
 \end{code}
 Solução para árvores de tipo \LTree:
 \begin{code}
