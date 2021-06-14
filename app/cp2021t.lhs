@@ -1101,17 +1101,19 @@ hyloAlgForm = undefined
 
 Solução para listas não vazias:
 \begin{code}
-avg = p1 . avg_aux
+avg = fromIntegral . p1 . avg_aux
 \end{code}
 
 \begin{code}
 
 b = const (0,0);
 --avg_gene i2() = ( div (p1 + ((p1 . p2)*(p2 . p2))) ((p2 . p2)+1) , (p2 . p2)+1 ) ;
-q i2 () = div . split (mul . split (p1 . p2) (p2 . p2) ) (succ . p2 . p2)
+--q = ( div . split ( p1 + (mul . split (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) 
+--q = ( div ( p1 + (mul (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) 
+q (a,(b,c)) = (div (a + (mul (b,c)) ) (c+1), c+1);
 
-avg_aux = cataList (either b q)
-\end{code}
+avg_aux = cataList (either b q) 
+\end{code} 
 Solução para árvores de tipo \LTree:
 \begin{code}
 avgLTree = p1.cataLTree gene where
