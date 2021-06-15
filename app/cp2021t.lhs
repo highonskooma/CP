@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage{amsmath}
 \usepackage[all]{xy}
 \definecolor{red}{RGB}{255,  0,  0}
 \definecolor{blue}{RGB}{0,0,255}
@@ -128,15 +129,13 @@
 
 \begin{center}\large
 \begin{tabular}{ll}
-\textbf{Grupo} nr. & 999 (preencher)
+\textbf{Grupo} nr. & 83
 \\\hline
-a11111 & Nome1 (preencher)
+a82044 & João Domingos Pereira Barbosa 
 \\
-a22222 & Nome2 (preencher)
+a84540 & Maria João da Silva Cruz Saraiva Moreira
 \\
-a33333 & Nome3 (preencher)
-\\
-a44444 & Nome4 (preencher, se aplicável, ou apagar)
+a64671 & João Guilherme Rodrigues Reis 
 \end{tabular}
 \end{center}
 
@@ -1058,13 +1057,39 @@ id . i2 = [ outExpAr . N, [ outExpAr . bin, outExpAr . Ûn] ]
 
 \just\equiv { universal-+ }
 
-\left{
-   \begin{array}{lll}
-      |linha1|\\
-      |linha2|\\
-      |linha3|
-  \end{array}
-\right.
+\begin{cases}
+id . i1 = outExpAr . const X \\
+id . i2 . i1 = outExpAr . N \\
+id . i2 . i2 = [ outExpAr . bin, outExpAr . Ûn] 
+\end{cases}
+\just\equiv { universal-+ }
+\begin{cases}
+id . i1 = outExpAr . const X \\
+id . i2 . i1 = outExpAr . N \\
+id . i2 . i2 . i1 = outExpAr . bin \\
+id . i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\just\equiv { natural-id }
+\begin{cases}
+i1 = outExpAr . const X \\
+i2 . i1 = outExpAr . N\\
+i2 . i2 . i1 = outExpAr . bin \\
+i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\just\equiv { fusão-const }
+\begin{cases}
+i1 = outExpAr . const X\\
+i2 . i1 = outExpAr . N\\
+i2 . i2 . i1 = outExpAr . bin \\
+i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\begin{cases}
+outExpAr (const X) = Left(const X)\\
+outExpAr (N) = Right(Left(N))\\
+outExpAr (Bin op a b) = Right(Right(Left(Bin op a b)))\\
+outExpAr (Un a b) = Right(Right(Right(Un a b)))
+\end{cases}
+
 
 
 \end{eqnarray*}
@@ -1138,15 +1163,28 @@ Apresentar de seguida a justificação da solução encontrada.
 
 \begin{code}
 calcLine :: NPoint -> (NPoint -> OverTime NPoint)
-calcLine = cataList h where
-   h = undefined
+calcLine = cataList (either (const (const nil)) k) where
+    k (d,f) [] f1 = []
+    k (d,f) (x:xs) f1 = linear1d d x f1 : f xs f1
+
+fAlgForm f = id -|- ( id -|- f >< f )
 
 deCasteljau :: [NPoint] -> OverTime NPoint
 deCasteljau = hyloAlgForm alg coalg where
    coalg = undefined
    alg = undefined
 
-hyloAlgForm = undefined
+outAlg [] = i1();
+outAlg a = (i2 . i1) a;
+outAlg (x,y) = (i2 . i2) (x,y);
+
+cataAlgForm g = g . FAlgForm (cataAlgForm) . outAlg
+
+inAlg a = either [] (either Only Pair)
+
+anaAlg g = inAlg . fAlgForm(anaAlgForm) . g
+
+hyloAlgForm = cata . ana
 \end{code}
 
 \subsection*{Problema 4}
@@ -1159,9 +1197,6 @@ avg = p1 . avg_aux
 \begin{code}
 
 b = const (0,0);
---avg_gene i2() = ( div (p1 + ((p1 . p2)*(p2 . p2))) ((p2 . p2)+1) , (p2 . p2)+1 ) ;
---q = ( div . split ( p1 + (mul . split (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) 
---q = ( div ( p1 + (mul (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) 
 q (a,(b,c)) = (div (a + (mul (b, c)) ) (c+1), c+1);
 
 avg_aux = cataList (either b q) 
