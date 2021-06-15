@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage[all]{xy}
 \definecolor{red}{RGB}{255,  0,  0}
 \definecolor{blue}{RGB}{0,0,255}
 \def\red{\color{red}}
@@ -1017,6 +1018,57 @@ ad v = p2 . cataExpAr (ad_gen v)
 \end{code}
 Definir:
 
+\begin{eqnarray*}
+\start
+
+        |lcbr(
+inExpAr . outExpAr = id
+        )(
+outExpAr . inExpAr = id 
+        )|
+        
+
+\just\equiv{ inExpAr = [ const X, [ N,[ bin, Ûn] ] ] }
+
+        |lcbr(
+[ const X, [ N,[ bin, Ûn] ] ] . outExpAr = id
+        )(
+outExpAr . [ const X, [ N,[ bin, Ûn] ] ] = id
+        )|
+
+\just\equiv { fusão-+ }
+
+[ outExpAr . const X, outExpAr . [ N,[ bin, Ûn] ] ] = id
+
+\just\equiv { fusão-+ }
+
+[ outExpAr . const X, [ outExpAr . N, outExpAr . [ bin, Ûn] ] ] = id
+
+\just\equiv { fusão-+ }
+
+[ outExpAr . const X, [ outExpAr . N, [ outExpAr . bin, outExpAr . Ûn] ] ] = id
+
+\just\equiv { universal-+ }
+
+      |lcbr(
+id . i1 = outExpAr . const X
+      )(
+id . i2 = [ outExpAr . N, [ outExpAr . bin, outExpAr . Ûn] ]
+      )|
+
+\just\equiv { universal-+ }
+
+\left{
+   \begin{array}{lll}
+      |linha1|\\
+      |linha2|\\
+      |linha3|
+  \end{array}
+\right.
+
+
+\end{eqnarray*}
+
 \begin{code}
 outExpAr (X) = i1 ()
 outExpAr (N x) = i2(i1(x))
@@ -1112,7 +1164,7 @@ b = const (0,0);
 --q = ( div ( p1 + (mul (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) 
 q (a,(b,c)) = (div (a + (mul (b, c)) ) (c+1), c+1);
 
-avg_aux = undefined -- cataList (either b q) 
+avg_aux = cataList (either b q) 
 \end{code} 
 Solução para árvores de tipo \LTree:
 \begin{code}
