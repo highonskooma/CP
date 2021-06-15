@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage{amsmath}
 \usepackage[all]{xy}
 \definecolor{red}{RGB}{255,  0,  0}
 \definecolor{blue}{RGB}{0,0,255}
@@ -308,13 +309,11 @@
 \begin{tabular}{ll}
 \textbf{Grupo} nr. & 999 (preencher)
 \\\hline
-a11111 & Nome1 (preencher)
+a82044 & João Domingos Pereira Barbosa (preencher)
 \\
-a22222 & Nome2 (preencher)
+a84540 & Maria João da Silva Cruz Saraiva Moreira (preencher)
 \\
-a33333 & Nome3 (preencher)
-\\
-a44444 & Nome4 (preencher, se aplicável, ou apagar)
+a64671 & João Guilherme Rodrigues Reis (preencher)
 \end{tabular}
 \end{center}
 
@@ -1584,13 +1583,39 @@ Definir:
 
 \just\equiv { universal-+ }
 
-\left{
-   \begin{array}{lll}
-      \ensuremath{\Varid{linha1}}\\
-      \ensuremath{\Varid{linha2}}\\
-      \ensuremath{\Varid{linha3}}
-  \end{array}
-\right.
+\begin{cases}
+id . i1 = outExpAr . const X \\
+id . i2 . i1 = outExpAr . N \\
+id . i2 . i2 = [ outExpAr . bin, outExpAr . Ûn] 
+\end{cases}
+\just\equiv { universal-+ }
+\begin{cases}
+id . i1 = outExpAr . const X \\
+id . i2 . i1 = outExpAr . N \\
+id . i2 . i2 . i1 = outExpAr . bin \\
+id . i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\just\equiv { natural-id }
+\begin{cases}
+i1 = outExpAr . const X \\
+i2 . i1 = outExpAr . N\\
+i2 . i2 . i1 = outExpAr . bin \\
+i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\just\equiv { fusão-const }
+\begin{cases}
+i1 = outExpAr . const X\\
+i2 . i1 = outExpAr . N\\
+i2 . i2 . i1 = outExpAr . bin \\
+i2 . i2 . i2 = outExpAr . Ûn 
+\end{cases}
+\begin{cases}
+outExpAr (const X) = Left(const X)\\
+outExpAr (N) = Right(Left(N))\\
+outExpAr (Bin op a b) = Right(Right(Left(Bin op a b)))\\
+outExpAr (Un a b) = Right(Right(Right(Un a b)))
+\end{cases}
+
 
 
 \end{eqnarray*}
@@ -1710,13 +1735,19 @@ Apresentar de seguida a justificação da solução encontrada.
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{4}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{5}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{calcLine}\mathbin{::}\Conid{NPoint}\to (\Conid{NPoint}\to \Conid{OverTime}\;\Conid{NPoint}){}\<[E]%
 \\
-\>[B]{}\Varid{calcLine}\mathrel{=}\Varid{cataList}\;\Varid{h}\;\mathbf{where}{}\<[E]%
+\>[B]{}\Varid{calcLine}\mathrel{=}\Varid{cataList}\;\alt{\underline{\underline{\Varid{nil}}}}{\Varid{k}}\;\mathbf{where}{}\<[E]%
 \\
-\>[B]{}\hsindent{4}{}\<[4]%
-\>[4]{}\Varid{h}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\hsindent{5}{}\<[5]%
+\>[5]{}\Varid{k}\;(\Varid{d},\Varid{f})\;[\mskip1.5mu \mskip1.5mu]\;\Varid{f1}\mathrel{=}[\mskip1.5mu \mskip1.5mu]{}\<[E]%
+\\
+\>[B]{}\hsindent{5}{}\<[5]%
+\>[5]{}\Varid{k}\;(\Varid{d},\Varid{f})\;(\Varid{x}\mathbin{:}\Varid{xs})\;\Varid{f1}\mathrel{=}\Varid{linear1d}\;\Varid{d}\;\Varid{x}\;\Varid{f1}\mathbin{:}\Varid{f}\;\Varid{xs}\;\Varid{f1}{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\mathbf{data}\;\Conid{FAlgForm}\;\Varid{a}\mathrel{=}\Conid{Empty}\mid \Conid{Only}\;(\Varid{a})\mid \Conid{Pair}\;(\Conid{FAlgForm}\;\Varid{a})\;(\Conid{FAlgForm}\;\Varid{a}){}\<[E]%
 \\[\blanklineskip]%
 \>[B]{}\Varid{deCasteljau}\mathbin{::}[\mskip1.5mu \Conid{NPoint}\mskip1.5mu]\to \Conid{OverTime}\;\Conid{NPoint}{}\<[E]%
 \\
@@ -1727,6 +1758,16 @@ Apresentar de seguida a justificação da solução encontrada.
 \\
 \>[B]{}\hsindent{4}{}\<[4]%
 \>[4]{}\Varid{alg}\mathrel{=}\bot {}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{outAlg}\;\Conid{Empty}\mathrel{=}i_1\;();{}\<[E]%
+\\
+\>[B]{}\Varid{outAlg}\;\Conid{Only}\;(\Varid{a})\mathrel{=}(i_2\comp i_1)\;\Varid{a};{}\<[E]%
+\\
+\>[B]{}\Varid{outAlg}\;\Conid{Pair}\;(\Varid{x},\Varid{y})\mathrel{=}(i_2\comp i_2)\;(\Varid{x},\Varid{y});{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{cataAlgForm}\;\Varid{g}\mathrel{=}\Varid{g}\comp \Conid{FAlgForm}\;\cata{\cdot }\comp \Varid{outAlg}{}\<[E]%
+\\[\blanklineskip]%
+\>[B]{}\Varid{inAlg}\mathrel{=}\alt{\Conid{Empty}}{\alt{\Conid{Only}}{\Conid{Pair}}}{}\<[E]%
 \\[\blanklineskip]%
 \>[B]{}\Varid{hyloAlgForm}\mathrel{=}\bot {}\<[E]%
 \ColumnHook
@@ -1746,12 +1787,6 @@ Solução para listas não vazias:
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{b}\mathrel{=}\underline{(\mathrm{0},\mathrm{0})};{}\<[E]%
-\\
-\>[B]{}\mbox{\onelinecomment avg_gene i2() = ( div (p1 + ((p1 . p2)*(p2 . p2))) ((p2 . p2)+1) , (p2 . p2)+1 ) ;}{}\<[E]%
-\\
-\>[B]{}\mbox{\onelinecomment q = ( div . split ( p1 + (mul . split (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) }{}\<[E]%
-\\
-\>[B]{}\mbox{\onelinecomment q = ( div ( p1 + (mul (p1 . p2) (p2 . p2) ) ) (succ . p2 . p2) , succ . p2 . p2) }{}\<[E]%
 \\
 \>[B]{}\Varid{q}\;(\Varid{a},(\Varid{b},\Varid{c}))\mathrel{=}(\Varid{a}\mathbin{+}(\Varid{mul}\;(\Varid{b},\Varid{c}))\div \Varid{c}\mathbin{+}\mathrm{1},\Varid{c}\mathbin{+}\mathrm{1});{}\<[E]%
 \\[\blanklineskip]%
