@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage{amsmath}
 
 \definecolor{red}{RGB}{255,  0,  0}
 \definecolor{blue}{RGB}{0,0,255}
@@ -356,6 +357,7 @@ O algorítmo da \emph{divisão Euclidiana},
 \ColumnHook
 \end{hscode}\resethooks
 dá erro quando o denominador \ensuremath{\Varid{d}} é zero, recorrendo à função auxiliar seguinte
+\end{eqnarray*}
 nos outros casos, paramétrica em \ensuremath{\Varid{d}}: 
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
@@ -884,6 +886,8 @@ Os diagramas podem ser produzidos recorrendo à \emph{package} \LaTeX\
 }
 \end{eqnarray*}
 
+
+
 \section{Regra prática para a recursividade mútua em \ensuremath{\N_0}}\label{sec:mr}
 
 Nesta disciplina estudou-se como fazer \pd{programação dinâmica} por cálculo,
@@ -1182,12 +1186,134 @@ simples e elegantes.
 
 \subsection*{Problema 1} \label{pg:P1}
 
-Apresentar cálculos aqui, se desejável acompanhados de diagramas, etc.
+Uma vez que estamos perante uma função que opera sobre naturais, podemos inferir que:
+\begin{eqnarray*}
+\start
+\\
+    \ensuremath{\mathbf{in}\mathrel{=}\alt{\Varid{zero}}{\succ }} \\
+    \ensuremath{\Varid{out}\;\mathrm{0}\mathrel{=}i_1} \\
+    \ensuremath{\Varid{out}\;\Varid{n}\mathbin{+}\mathrm{1}\mathrel{=}i_2\;\Varid{n}} \\
+    \ensuremath{\Conid{F}\;\Conid{X}\mathrel{=}\mathrm{1}\mathbin{+}\Conid{X}} \\
+    \ensuremath{\Conid{F}\;\Varid{f}\mathrel{=}\Varid{id}\mathbin{+}\Varid{f}} 
+\qed
+\end{eqnarray*}
+Parte-se de S1 e da lei da Recursividade Mútua:
+\begin{eqnarray*}
+\start
+\begin{cases} \ensuremath{\Varid{q}\comp \mathbf{in}\mathrel{=}\Varid{h}\comp \Conid{F}\;\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}} \\ 
+    \ensuremath{\Varid{r}\comp \mathbf{in}\mathrel{=}\Varid{k}\comp \Conid{F}\;(\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}} \\
+    \ensuremath{\Varid{c}\comp \mathbf{in}\mathrel{=}\Varid{l}\comp \Conid{F}\;(\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}} \end{cases}
+%
+\just\equiv{ \ensuremath{\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}\mathrel{=}\cata{\conj{\Varid{h}}{\conj{\Varid{k}}{\Varid{l}}}}} }
+%
+\just\equiv{ Definição de in, Funtor dos Naturais }
+%
+\begin{cases} \ensuremath{\Varid{q}\comp \alt{\Varid{zero}}{\succ }\mathrel{=}\Varid{h}\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\ 
+    \ensuremath{\Varid{r}\comp \alt{\Varid{zero}}{\succ }\mathrel{=}\Varid{k}\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+    \ensuremath{\Varid{c}\comp \alt{\Varid{zero}}{\succ }\mathrel{=}\Varid{l}\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \end{cases}
+%
+\just\equiv{ Fusão-+ }
+%
+\begin{cases} \ensuremath{\alt{\Varid{q}\comp \Varid{zero}}{\Varid{q}\comp \succ }\mathrel{=}\alt{h_1 }{h_2 }\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\ 
+    \ensuremath{\alt{\Varid{r}\comp \Varid{zero}}{\Varid{r}\comp \succ }\mathrel{=}\alt{k_1 }{k_2 }\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+    \ensuremath{\alt{\Varid{c}\comp \Varid{zero}}{\Varid{c}\comp \succ }\mathrel{=}\alt{l_1 }{l_2 }\comp (\Varid{id}\mathbin{+}\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})} \end{cases}
+%
+\just\equiv{ Absorção-+}
+%
+\begin{cases} \ensuremath{\alt{\Varid{q}\comp \Varid{zero}}{\Varid{q}\comp \succ }\mathrel{=}\alt{h_1 \comp \Varid{id}}{h_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}} \\ 
+    \ensuremath{\alt{\Varid{r}\comp \Varid{zero}}{\Varid{r}\comp \succ }\mathrel{=}\alt{k_1 \comp \Varid{id}}{k_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}} \\
+    \ensuremath{\alt{\Varid{c}\comp \Varid{zero}}{\Varid{c}\comp \succ }\mathrel{=}\alt{l_1 \comp \Varid{id}}{l_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}} \end{cases}
+%
+\just\equiv{ EQ-+ }
+%
+\begin{cases}
+    \begin{cases}
+	    \ensuremath{\Varid{q}\comp \Varid{zero}\mathrel{=}h_1 \comp \Varid{id}}\\
+        \ensuremath{\Varid{q}\comp \succ \mathrel{=}h_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{r}\comp \Varid{zero}\mathrel{=}k_1 \comp \Varid{id}}\\ 
+        \ensuremath{\Varid{r}\comp \succ \mathrel{=}k_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{c}\comp \Varid{zero}\mathrel{=}l_1 \comp \Varid{id}}\\
+        \ensuremath{\Varid{c}\comp \succ \mathrel{=}l_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}
+    \end{cases}
+\end{cases}
+%
+\just\equiv { Igualdade Extensional (71)}
+%
+\begin{cases}
+    \begin{cases}
+	    \ensuremath{(\Varid{q}\comp \Varid{zero})\;\Varid{x}\mathrel{=}(h_1 \comp \Varid{id})\;\Varid{x}}\\
+        \ensuremath{(\Varid{q}\comp \succ )\;\Varid{x}\mathrel{=}(h_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})\;\Varid{x}} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{(\Varid{r}\comp \Varid{zero})\;\Varid{x}\mathrel{=}(k_1 \comp \Varid{id})\;\Varid{x}}\\ 
+        \ensuremath{(\Varid{r}\comp \succ )\;\Varid{x}\mathrel{=}(k_2 \comp \conj{\Varid{q}}{\conj{\Varid{rc}}{\cdot }})\;\Varid{x}} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{(\Varid{c}\comp \Varid{zero})\;\Varid{x}\mathrel{=}(l_1 \comp \Varid{id})\;\Varid{x}}\\
+        \ensuremath{(\Varid{c}\comp \succ )\;\Varid{x}\mathrel{=}(l_2 \comp \conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})\;\Varid{x}}
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Def-comp (72)}
+%
+\begin{cases}
+    \begin{cases}
+	    \ensuremath{\Varid{q}\;(\Varid{zero}\;\Varid{x})\mathrel{=}h_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{q}\;(\succ \;\Varid{x})\mathrel{=}h_2 \;(\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}\;\Varid{x})} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{r}\;(\Varid{zero}\;\Varid{x})\mathrel{=}k_1 \;(\Varid{id}\;\Varid{x})}\\ 
+        \ensuremath{\Varid{r}\;(\succ \;\Varid{x})\mathrel{=}k_2 \;(\conj{\Varid{q}}{\conj{\Varid{rc}}{\cdot }}\;\Varid{x})} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{c}\;(\Varid{zero}\;\Varid{x})\mathrel{=}l_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{c}\;(\succ \;\Varid{x})\mathrel{=}l_2 \;(\conj{\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}\;\Varid{x})}
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Def-split (76)}
+\begin{cases}
+    \begin{cases}
+	    \ensuremath{\Varid{q}\;(\Varid{zero}\;\Varid{x})\mathrel{=}h_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{q}\;(\succ \;\Varid{x})\mathrel{=}h_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{r}\;(\Varid{zero}\;\Varid{x})\mathrel{=}k_1 \;(\Varid{id}\;\Varid{x})}\\ 
+        \ensuremath{\Varid{r}\;(\succ \;\Varid{x})\mathrel{=}k_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{c}\;(\Varid{zero}\;\Varid{x})\mathrel{=}l_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{c}\;(\succ \;\Varid{x})\mathrel{=}l_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))}
+    \end{cases}
+\end{cases}
+%
+\begin{cases}
+    \begin{cases}
+	    \ensuremath{\Varid{q}\;\mathrm{0}\mathrel{=}h_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{q}\;(\Varid{x}\mathbin{+}\mathrm{1})\mathrel{=}h_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{r}\;\mathrm{0}\mathrel{=}k_1 \;(\Varid{id}\;\Varid{x})}\\ 
+        \ensuremath{\Varid{r}\;(\Varid{x}\mathbin{+}\mathrm{1})\mathrel{=}k_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))} 
+    \end{cases} \\
+    \begin{cases}
+        \ensuremath{\Varid{c}\;\mathrm{0}\mathrel{=}l_1 \;(\Varid{id}\;\Varid{x})}\\
+        \ensuremath{\Varid{c}\;(\Varid{x}\mathbin{+}\mathrm{1})\mathrel{=}l_2 \;(\Varid{q}\;\Varid{x},(\Varid{r}\;\Varid{x},\Varid{c}\;\Varid{x}))}
+    \end{cases}
+\end{cases}
 
+%
+\qed
+\end{eqnarray*}
 \subsection*{Problema 2}
 
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{6}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{7}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}\Varid{alice}\mathbin{::}\Conid{Ord}\;\Varid{c}\Rightarrow {\LTree}\;\Varid{c}\to \Varid{c}{}\<[E]%
@@ -1201,54 +1327,79 @@ Apresentar cálculos aqui, se desejável acompanhados de diagramas, etc.
 \\[\blanklineskip]%
 \>[B]{}\Varid{both}\mathbin{::}\Conid{Ord}\;\Varid{d}\Rightarrow {\LTree}\;\Varid{d}\to (\Varid{d},\Varid{d}){}\<[E]%
 \\
-\>[B]{}\Varid{both}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{both}\mathrel{=}\llparenthesis\, \alt{\Varid{f}}{\Varid{g}}\,\rrparenthesis\;\mathbf{where}{}\<[E]%
+\\
+\>[B]{}\hsindent{6}{}\<[6]%
+\>[6]{}\Varid{f}\;\Varid{x}\mathrel{=}(\Varid{x},\Varid{x}){}\<[E]%
+\\
+\>[B]{}\hsindent{6}{}\<[6]%
+\>[6]{}\Varid{g}\;((\Varid{a},\Varid{b}),(\Varid{c},\Varid{d}))\mathrel{=}(\Varid{max}\;\Varid{b}\;\Varid{d},\Varid{min}\;\Varid{a}\;\Varid{c}){}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
+
+Apresentamos o seguinte diagrama da função both.
+
+\begin{eqnarray*}
+\xymatrix@C=2cm@R=2cm{
+     \ensuremath{{\LTree}\;\Conid{A}}
+           \ar[dr]_{\ensuremath{\Varid{alice}}}
+&
+     \ensuremath{{\LTree}\;\Conid{A}} 
+           \ar[l]_-{\ensuremath{\Varid{id}}}
+           \ar[r]^-{\ensuremath{\Varid{id}}}
+           \ar[d]^-{\ensuremath{\Varid{both}}}
+&
+     \ensuremath{{\LTree}\;\Conid{A}}
+           \ar[dl]^{\ensuremath{\Varid{bob}}}
+\\
+&
+     \ensuremath{\Conid{INT}} \times \ensuremath{\Conid{INT}}
+}
+\end{eqnarray*}
 
 \subsection*{Problema 3}
 Biblioteca \ensuremath{\mathsf{LTree3}}:
 
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
+\column{6}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{27}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
-\>[B]{}\Varid{inLTree3}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{inLTree3}\mathrel{=}\alt{\Conid{Tri}}{\Varid{f}}\;\mathbf{where}{}\<[E]%
+\\
+\>[B]{}\hsindent{6}{}\<[6]%
+\>[6]{}\Varid{f}\;((\Varid{a},\Varid{b}),\Varid{c})\mathrel{=}\Conid{Nodo}\;\Varid{a}\;\Varid{b}\;\Varid{c}{}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{outLTree3}\;(\Conid{Tri}\;\Varid{t})\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{outLTree3}\;(\Conid{Tri}\;\Varid{t})\mathrel{=}i_1\;\Varid{t}{}\<[E]%
 \\
 \>[B]{}\Varid{outLTree3}\;(\Conid{Nodo}\;\Varid{a}\;\Varid{b}\;\Varid{c})\mathrel{=}{}\<[27]%
-\>[27]{}\bot {}\<[E]%
+\>[27]{}i_2\;((\Varid{a},\Varid{b}),\Varid{c}){}\<[E]%
 \\[\blanklineskip]%
 \>[B]{}\Varid{baseLTree3}\;\Varid{f}\;\Varid{g}\mathrel{=}\bot {}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{recLTree3}\;\Varid{f}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{recLTree3}\;\Varid{f}\mathrel{=}\Varid{id}+((\Varid{f}\times\Varid{f})\times\Varid{f}){}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{cataLTree3}\;\Varid{f}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{cataLTree3}\;\Varid{f}\mathrel{=}\Varid{f}\comp \Varid{recLTree3}\;(\Varid{cataLTree3}\;\Varid{f})\comp \Varid{outLTree3}{}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{anaLTree3}\;\Varid{f}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{anaLTree3}\;\Varid{f}\mathrel{=}\Varid{inLTree3}\comp \Varid{recLTree3}\;(\Varid{anaLTree3}\;\Varid{f})\comp \Varid{f}{}\<[E]%
 \\[\blanklineskip]%
-\>[B]{}\Varid{hyloLTree3}\;\Varid{f}\;\Varid{g}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\Varid{hyloLTree3}\;\Varid{f}\;\Varid{g}\mathrel{=}\Varid{cataLTree3}\;\Varid{f}\comp \Varid{anaLTree3}\;\Varid{g}{}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
 Genes do hilomorfismo \ensuremath{\Varid{sierpinski}}:
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
-\column{6}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{E}{@{}>{\hspre}l<{\hspost}@{}}%
 \>[B]{}g_1 \mathrel{=}\bot {}\<[E]%
-\\[\blanklineskip]%
-\>[B]{}g_2 \;(\Varid{t},\mathrm{0})\mathrel{=}\bot {}\<[E]%
 \\
-\>[B]{}g_2 \;(((\Varid{x},\Varid{y}),\Varid{s}),\Varid{n}\mathbin{+}\mathrm{1})\mathrel{=}i_2\;((\Varid{t1},\Varid{t2}),\Varid{t3})\;\mathbf{where}{}\<[E]%
+\>[B]{}g_2 \mathrel{=}\bot {}\<[E]%
 \\
-\>[B]{}\hsindent{6}{}\<[6]%
-\>[6]{}\Varid{t1}\mathrel{=}\bot {}\<[E]%
-\\
-\>[B]{}\hsindent{6}{}\<[6]%
-\>[6]{}\Varid{t2}\mathrel{=}\bot {}\<[E]%
-\\
-\>[B]{}\hsindent{6}{}\<[6]%
-\>[6]{}\Varid{t3}\mathrel{=}\bot {}\<[E]%
+\>[B]{}\mbox{\commentbegin 
+g2 (t,0) = t
+g2 (((x,y),s),n+1) = i2((t1,t2),t3) where
+     t1 = (((x,y),fromIntegral s/2),n) 
+     t2 = (((x,y+s/2),fromIntegral s/2),n) 
+     t3 = (((x+s/2,y),fromIntegral s/2),n)  \commentend}{}\<[E]%
 \ColumnHook
 \end{hscode}\resethooks
 

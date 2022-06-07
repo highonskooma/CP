@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage{amsmath}
 
 \definecolor{red}{RGB}{255,  0,  0}
 \definecolor{blue}{RGB}{0,0,255}
@@ -203,6 +204,7 @@ import Control.Applicative hiding ((<|>))
 import System.Process
 import Data.Char
 import Probability hiding (scale)
+import LTree (cataLTree, recLTree, dlLTree)
 
 main = undefined
 \end{code}
@@ -216,6 +218,7 @@ ed (n,0) = Nothing
 ed (n,d+1) = (Just . p1) (aux d n)
 \end{code}
 dá erro quando o denominador |d| é zero, recorrendo à função auxiliar seguinte
+\end{eqnarray*}
 nos outros casos, paramétrica em |d|: 
 \begin{code}
 aux d = split (q d) (split (r d) (c d))
@@ -670,6 +673,8 @@ Os diagramas podem ser produzidos recorrendo à \emph{package} \LaTeX\
 }
 \end{eqnarray*}
 
+
+
 \section{Regra prática para a recursividade mútua em |Nat0|}\label{sec:mr}
 
 Nesta disciplina estudou-se como fazer \pd{programação dinâmica} por cálculo,
@@ -887,8 +892,129 @@ simples e elegantes.
 
 \subsection*{Problema 1} \label{pg:P1}
 
-Apresentar cálculos aqui, se desejável acompanhados de diagramas, etc.
+Uma vez que estamos perante uma função que opera sobre naturais, podemos inferir que:
+\begin{eqnarray*}
+\start
+\\
+    |in = either zero succ| \\
+    |out 0 = i1| \\
+    |out n+1 = i2 n| \\
+    |F X = 1 + X| \\
+    |F f = id + f| 
+\qed
+\end{eqnarray*}
+Parte-se de S1 e da lei da Recursividade Mútua:
+\begin{eqnarray*}
+\start
+\begin{cases} |q . in = h . F (split (q) (split (r) (c)))| \\ 
+    |r . in = k . F ((split (q) (split (r) (c)))| \\
+    |c . in = l . F ((split (q) (split (r) (c)))| \end{cases}
+%
+\just\equiv{ |split (q) (split r c) = cata (split (h) (split k l))| }
+%
+\just\equiv{ Definição de in, Funtor dos Naturais }
+%
+\begin{cases} |q . either zero succ = h . (id + split (q) (split (r) (c)))| \\ 
+    |r . either zero succ = k . (id + (split (q) (split (r) (c))))| \\
+    |c . either zero succ = l . (id + (split (q) (split (r) (c))))| \end{cases}
+%
+\just\equiv{ Fusão-+ }
+%
+\begin{cases} |either (q . zero) (q . succ) = either h1 h2 . (id + split (q) (split (r) (c)))| \\ 
+    |either (r . zero) (r . succ) = either k1 k2 . (id + (split (q) (split (r) (c))))| \\
+    |either (c . zero) (c . succ) = either l1 l2 . (id + (split (q) (split (r) (c))))| \end{cases}
+%
+\just\equiv{ Absorção-+}
+%
+\begin{cases} |either (q . zero) (q . succ) = either (h1 . id) (h2 . split (q) (split (r) (c)))| \\ 
+    |either (r . zero) (r . succ) = either (k1 . id) (k2 . split (q) (split (r) (c)))| \\
+    |either (c . zero) (c . succ) = either (l1 . id) (l2 . split (q) (split (r) (c)))| \end{cases}
+%
+\just\equiv{ EQ-+ }
+%
+\begin{cases}
+    \begin{cases}
+	    |q . zero = h1 . id|\\
+        |q . succ = h2 . split (q) (split r c)| 
+    \end{cases} \\
+    \begin{cases}
+        |r . zero = k1 . id|\\ 
+        |r . succ = k2 . split (q) (split r c)| 
+    \end{cases} \\
+    \begin{cases}
+        |c. zero = l1 . id|\\
+        |c . succ = l2 . split (q) (split r c)|
+    \end{cases}
+\end{cases}
+%
+\just\equiv { Igualdade Extensional (71)}
+%
+\begin{cases}
+    \begin{cases}
+	    |(q . zero) x  = (h1 . id) x|\\
+        |(q . succ) x = (h2 . split (q) (split r c)) x| 
+    \end{cases} \\
+    \begin{cases}
+        |(r . zero) x = (k1 . id) x|\\ 
+        |(r . succ) x = (k2 . split (q) (split rc)) x| 
+    \end{cases} \\
+    \begin{cases}
+        |(c. zero) x = (l1 . id) x|\\
+        |(c . succ) x= (l2 . split (q) (split r c)) x|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Def-comp (72)}
+%
+\begin{cases}
+    \begin{cases}
+	    |q (zero x)  = h1 (id x)|\\
+        |q (succ x) = h2 ((split (q) (split r c) x))| 
+    \end{cases} \\
+    \begin{cases}
+        |r (zero x) = k1 (id x)|\\ 
+        |r (succ x) = k2 ((split (q) (split rc) x))| 
+    \end{cases} \\
+    \begin{cases}
+        |c (zero x) = l1 (id x)|\\
+        |c (succ x)= l2 ((split (q) (split r c) x))|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Def-split (76)}
+\begin{cases}
+    \begin{cases}
+	    |q (zero x)  = h1 (id x)|\\
+        |q (succ x) = h2 (q x, (r x, c x))| 
+    \end{cases} \\
+    \begin{cases}
+        |r (zero x) = k1 (id x)|\\ 
+        |r (succ x) = k2 (q x,(r x , c x))| 
+    \end{cases} \\
+    \begin{cases}
+        |c (zero x) = l1 (id x)|\\
+        |c (succ x)= l2 (q x, (r x , c x))|
+    \end{cases}
+\end{cases}
+%
+\begin{cases}
+    \begin{cases}
+	    |q 0  = h1 (id x)|\\
+        |q (x + 1) = h2 (q x, (r x, c x))| 
+    \end{cases} \\
+    \begin{cases}
+        |r 0 = k1 (id x)|\\ 
+        |r (x + 1) = k2 (q x,(r x , c x))| 
+    \end{cases} \\
+    \begin{cases}
+        |c 0 = l1 (id x)|\\
+        |c (x + 1) = l2 (q x, (r x , c x))|
+    \end{cases}
+\end{cases}
 
+%
+\qed
+\end{eqnarray*}
 \subsection*{Problema 2}
 
 \begin{code}
@@ -899,37 +1025,65 @@ bob :: Ord c => LTree c -> c
 bob   = undefined    
 
 both :: Ord d => LTree d -> (d, d)
-both = undefined
+both = cataLTree (either f g) where
+     f x = (x,x)
+     g ((a,b),(c,d)) = (max b d, min a c) 
+
+
+
 \end{code}
+
+Apresentamos o seguinte diagrama da função both.
+
+\begin{eqnarray*}
+\xymatrix@@C=2cm@@R=2cm{
+     |LTree A|
+           \ar[dr]_{|alice|}
+&
+     |LTree A| 
+           \ar[l]_-{|id|}
+           \ar[r]^-{|id|}
+           \ar[d]^-{|both|}
+&
+     |LTree A|
+           \ar[dl]^{|bob|}
+\\
+&
+     |INT| \times |INT|
+}
+\end{eqnarray*}
 
 \subsection*{Problema 3}
 Biblioteca |LTree3|:
 
 \begin{code}
-inLTree3 = undefined
+inLTree3 = either Tri f where 
+     f ((a,b),c) = Nodo a b c
 
-outLTree3 (Tri t) = undefined
-outLTree3 (Nodo a b c) =  undefined
+outLTree3 (Tri t) = i1 t
+outLTree3 (Nodo a b c) =  i2 ((a,b),c)
 
 baseLTree3 f g = undefined
 
-recLTree3 f = undefined
+recLTree3 f = id -|- ((f >< f) >< f)
 
-cataLTree3 f = undefined
+cataLTree3 f = f . recLTree3 (cataLTree3 f) . outLTree3
 
-anaLTree3 f = undefined
+anaLTree3 f = inLTree3 . recLTree3 (anaLTree3 f) . f
 
-hyloLTree3 f g = undefined
+hyloLTree3 f g = cataLTree3 f . anaLTree3 g
 \end{code}
 Genes do hilomorfismo |sierpinski|:
 \begin{code}
 g1 = undefined
-
-g2 (t,0) = undefined
+g2 = undefined
+{-
+g2 (t,0) = t
 g2 (((x,y),s),n+1) = i2((t1,t2),t3) where
-     t1 = undefined
-     t2 = undefined
-     t3 = undefined
+     t1 = (((x,y),fromIntegral s/2),n) 
+     t2 = (((x,y+s/2),fromIntegral s/2),n) 
+     t3 = (((x+s/2,y),fromIntegral s/2),n) 
+-}
 \end{code}
 
 \subsection*{Problema 4}

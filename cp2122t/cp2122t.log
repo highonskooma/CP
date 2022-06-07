@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.5.2)  2 MAY 2022 23:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.14)  7 JUN 2022 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **cp2122t
 (./cp2122t.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+L3 programming layer <2022-04-10>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size10.clo
@@ -238,7 +238,7 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 \c@propriedade=\count275
 
 (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+Package: fancyvrb 2022/04/12 4.2 verbatim text (tvz,hv)
 \FV@CodeLineNo=\count276
 \FV@InFile=\read3
 \FV@TabBox=\box50
@@ -246,17 +246,126 @@ Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
 \FV@StepNumber=\count278
 \FV@OutFile=\write3
 )
+(/usr/share/texmf-dist/tex/generic/xypic/xy.sty
+(/usr/share/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes,
+docmode, (/usr/share/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/share/texmf-dist/tex/generic/xypic/xyidioms.tex)
 
-! LaTeX Error: File `xy.sty' not found.
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen154
+\Y@c=\dimen155
+\U@c=\dimen156
+\D@c=\dimen157
+\L@c=\dimen158
+\R@c=\dimen159
+\Edge@c=\toks20
+\X@p=\dimen160
+\Y@p=\dimen161
+\U@p=\dimen162
+\D@p=\dimen163
+\L@p=\dimen164
+\R@p=\dimen165
+\Edge@p=\toks21
+\X@origin=\dimen166
+\Y@origin=\dimen167
+\X@xbase=\dimen168
+\Y@xbase=\dimen169
+\X@ybase=\dimen170
+\Y@ybase=\dimen171
+\X@min=\dimen172
+\Y@min=\dimen173
+\X@max=\dimen174
+\Y@max=\dimen175
+\lastobjectbox@=\box51
+\zerodotbox@=\box52
+\almostz@=\dimen176
+ direction,
+\d@X=\dimen177
+\d@Y=\dimen178
+\K@=\count279
+\KK@=\count280
+\Direction=\count281
+\K@dXdY=\dimen179
+\K@dYdX=\dimen180
+\xyread@=\read4
+\xywrite@=\write4
+\csp@=\count282
+\quotPTK@=\dimen181
 
-Enter file name: 
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks22
+\connectobjectbox@@=\box53
+ objects,
+\styletoks@=\toks23
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/share/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+
+(/usr/share/texmf-dist/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.8
+(/usr/share/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count283
+\crvpts@=\toks24
+\splinebox@=\box54
+\splineval@=\dimen182
+\splinedepth@=\dimen183
+\splinetol@=\dimen184
+\splinelength@=\dimen185
+ circles,
+\L@=\dimen186
+ loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.7
+(/usr/share/texmf-dist/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen187
+ loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.8 loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.11 loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14
+\Row=\count284
+\Col=\count285
+\queue@=\toks25
+\queue@@=\toks26
+\qcount@=\count286
+\qcount@@=\count287
+\matrixsize@=\count288
+ loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.9 Xy-pic pdf driver: `color' extension support
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded)
+Xy-pic pdf driver: `curve' extension support
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+Xy-pic pdf driver: `frame' extension support
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded)
+Xy-pic pdf driver: `line' extension support
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded)
+Xy-pic pdf driver: `rotate' extension support
+(/usr/share/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) loaded))
 (/usr/share/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 )
-\pn=\count279
+\pn=\count289
 )
 (/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2022/01/07 v1.5 Sub-captions (AR)
@@ -266,22 +375,22 @@ Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen154
-\captionmargin=\dimen155
-\caption@leftmargin=\dimen156
-\caption@rightmargin=\dimen157
-\caption@width=\dimen158
-\caption@indent=\dimen159
-\caption@parindent=\dimen160
-\caption@hangindent=\dimen161
+\caption@tempdima=\dimen188
+\captionmargin=\dimen189
+\caption@leftmargin=\dimen190
+\caption@rightmargin=\dimen191
+\caption@width=\dimen192
+\caption@indent=\dimen193
+\caption@parindent=\dimen194
+\caption@hangindent=\dimen195
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count280
-\c@continuedfloat=\count281
+\c@caption@flags=\count290
+\c@continuedfloat=\count291
 Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count282
-\c@subtable=\count283
+\c@subfigure=\count292
+\c@subtable=\count293
 )
 (/usr/share/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
@@ -291,10 +400,10 @@ Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks20
-\XKV@tempa@toks=\toks21
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
 )
-\XKV@depth=\count284
+\XKV@depth=\count294
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texmf-dist/tex/latex/adjustbox/adjcalc.sty
@@ -306,36 +415,36 @@ Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
 (/usr/share/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box51
+\collectedbox=\box55
 )
-\tc@llx=\dimen162
-\tc@lly=\dimen163
-\tc@urx=\dimen164
-\tc@ury=\dimen165
+\tc@llx=\dimen196
+\tc@lly=\dimen197
+\tc@urx=\dimen198
+\tc@ury=\dimen199
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
 (/usr/share/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen166
-\adjbox@Height=\dimen167
-\adjbox@Depth=\dimen168
-\adjbox@Totalheight=\dimen169
-\adjbox@pwidth=\dimen170
-\adjbox@pheight=\dimen171
-\adjbox@pdepth=\dimen172
-\adjbox@ptotalheight=\dimen173
+\adjbox@Width=\dimen256
+\adjbox@Height=\dimen257
+\adjbox@Depth=\dimen258
+\adjbox@Totalheight=\dimen259
+\adjbox@pwidth=\dimen260
+\adjbox@pheight=\dimen261
+\adjbox@pdepth=\dimen262
+\adjbox@ptotalheight=\dimen263
 
 (/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count285
+\c@checkoddpage=\count295
 )
 (/usr/share/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box52
-\sift@deathcycles=\count286
-\@vwid@loff=\dimen174
-\@vwid@roff=\dimen175
+\@vwid@box=\box56
+\sift@deathcycles=\count296
+\@vwid@loff=\dimen264
+\@vwid@roff=\dimen265
 ))
 (/usr/share/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
@@ -345,18 +454,80 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
 )
-Package color Info: Redefining color red on input line 11.
-Package color Info: Redefining color blue on input line 12.
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip51
 
+For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks22
-\ex@=\dimen176
+\@emptytoks=\toks29
+\ex@=\dimen266
 ))
-(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen267
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count297
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count298
+\leftroot@=\count299
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count300
+\DOTSCASE@=\count301
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box57
+\strutbox@=\box58
+\big@size=\dimen268
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count302
+\c@MaxMatrixCols=\count303
+\dotsspace@=\muskip17
+\c@parentequation=\count304
+\dspbrk@lvl=\count305
+\tag@help=\toks30
+\row@=\count306
+\column@=\count307
+\maxfields@=\count308
+\andhelp@=\toks31
+\eqnshift@=\dimen269
+\alignsep@=\dimen270
+\tagshift@=\dimen271
+\tagwidth@=\dimen272
+\totwidth@=\dimen273
+\lineht@=\dimen274
+\@envbody=\toks32
+
+
+! LaTeX Error: Command \split already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2384 }
+        
+? r
+OK, entering \nonstopmode...
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks33
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+Package color Info: Redefining color red on input line 12.
+Package color Info: Redefining color blue on input line 13.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -367,86 +538,85 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-
-! LaTeX Error: File `stmaryrd.sty' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
-
-Enter file name: 
+(/usr/share/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+)
 (/usr/share/texmf-dist/tex/latex/polytable/polytable.sty
 Package: polytable 2020/07/14 v0.8.6 `polytable' package (Andres Loeh)
 
 (/usr/share/texmf-dist/tex/latex/lazylist/lazylist.sty)
 (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen177
-\ar@mcellbox=\box53
-\extrarowheight=\dimen178
-\NC@list=\toks23
-\extratabsurround=\skip51
-\backup@length=\skip52
-\ar@cellbox=\box54
+\col@sep=\dimen275
+\ar@mcellbox=\box59
+\extrarowheight=\dimen276
+\NC@list=\toks34
+\extratabsurround=\skip54
+\backup@length=\skip55
+\ar@cellbox=\box60
 )
-\PT@colwidth=\dimen179
-\PT@cols=\count287
-\PT@table=\count288
-\PT@toks=\toks24
-\PT@in=\read4
-\PT@out=\write4
+\PT@colwidth=\dimen277
+\PT@cols=\count309
+\PT@table=\count310
+\PT@toks=\toks35
+\PT@in=\read5
+\PT@out=\write5
 )
-\blanklineskip=\skip53
+\blanklineskip=\skip56
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count289
-\calc@Bcount=\count290
-\calc@Adimen=\dimen180
-\calc@Bdimen=\dimen181
-\calc@Askip=\skip54
-\calc@Bskip=\skip55
+\calc@Acount=\count311
+\calc@Bcount=\count312
+\calc@Adimen=\dimen278
+\calc@Bdimen=\dimen279
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count291
-\calc@Cskip=\skip56
+\calc@Ccount=\count313
+\calc@Cskip=\skip59
 )
 
 LaTeX Warning: Label `eq:fokkinga' multiply defined.
 
-\@indexfile=\write5
-\openout5 = `cp2122t.idx'.
+\@indexfile=\write6
+\openout6 = `cp2122t.idx'.
 
 Writing index file cp2122t.idx
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 3
-06.
+07.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count292
-\l__pdf_internal_box=\box55
+File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count314
+\l__pdf_internal_box=\box61
 ) (./cp2122t.aux)
 \openout1 = `cp2122t.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 307.
+LaTeX Font Info:    ... okay on input line 307.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -482,7 +652,7 @@ LaTeX Font Info:    ... okay on input line 306.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 306.
+Package hyperref Info: Link coloring ON on input line 307.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -492,30 +662,30 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count293
+\c@section@level=\count315
 )
-LaTeX Info: Redefining \ref on input line 306.
-LaTeX Info: Redefining \pageref on input line 306.
-LaTeX Info: Redefining \nameref on input line 306.
+LaTeX Info: Redefining \ref on input line 307.
+LaTeX Info: Redefining \pageref on input line 307.
+LaTeX Info: Redefining \nameref on input line 307.
 
 (./cp2122t.out) (./cp2122t.out)
-\@outlinefile=\write6
-\openout6 = `cp2122t.out'.
+\@outlinefile=\write7
+\openout7 = `cp2122t.out'.
 
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
-\scratchdimen=\dimen182
-\scratchbox=\box56
-\nofMPsegments=\count295
-\nofMParguments=\count296
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count297
-\MPscratchDim=\dimen183
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count316
+\scratchdimen=\dimen280
+\scratchbox=\box62
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen281
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks37
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -525,322 +695,782 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
-09.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 309
+LaTeX Font Info:    Trying to load font information for U+msa on input line 307
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 309
+LaTeX Font Info:    Trying to load font information for U+msb on input line 307
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\openout4 = `cp2122t.ptb'.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 3
+07.
 
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
-<cp2122t_media/castor11.png, id=64, 1458.44875pt x 1092.08pt>
-File: cp2122t_media/castor11.png Graphic file (type png)
-<use cp2122t_media/castor11.png>
-Package pdftex.def Info: cp2122t_media/castor11.png  used on input line 490.
-(pdftex.def)             Requested size: 273.14923pt x 204.5312pt.
- [2]
-<cp2122t_media/sierpinski1.png, id=82, 1078.0275pt x 1078.0275pt>
-File: cp2122t_media/sierpinski1.png Graphic file (type png)
-<use cp2122t_media/sierpinski1.png>
-Package pdftex.def Info: cp2122t_media/sierpinski1.png  used on input line 510.
-
-(pdftex.def)             Requested size: 182.09486pt x 182.09435pt.
-<cp2122t_media/sierpinski2.png, id=83, 1446.40375pt x 1337.99875pt>
-File: cp2122t_media/sierpinski2.png Graphic file (type png)
-<use cp2122t_media/sierpinski2.png>
-Package pdftex.def Info: cp2122t_media/sierpinski2.png  used on input line 518.
-
-(pdftex.def)             Requested size: 273.14923pt x 252.67078pt.
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
- [3 <./cp2122t_media/castor11.png> <./cp2122t_media/sierpinski1.png>]
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
+(/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Package xypdf Info: Line width: 0.39998pt on input line 307.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
 10.
- (/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-[4 <./cp2122t_media/sierpinski2.png>]
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
-
-\openout4 = `cp2122t.ptb'.
-
- [5]
-\openout4 = `cp2122t.ptb'.
-
- [6]
-! Undefined control sequence.
-l.872 \xymatrix
-               @C=2cm{
-? 
-! Undefined control sequence.
-l.874            \ar
-                    [d]_-{\ensuremath{\cataNat{\Varid{g}}}}
-? r
-OK, entering \nonstopmode...
-! Missing } inserted.
-<inserted text> 
-                }
-l.875 &
-       
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-! Undefined control sequence.
-l.877            \ar
-                    [d]^{\ensuremath{\Varid{id}\mathbin{+}\cataNat{\Varid{g}}}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.878            \ar
-                    [l]_-{\ensuremath{\mathsf{in}}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.883            \ar
-                    [l]^-{\ensuremath{\Varid{g}}}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Incomplete \ifcase; all text was ignored after line 885.
-<inserted text> 
-                \fi 
-l.885 \end{eqnarray*}
+! Misplaced alignment tab character &.
+\reserved@a ->&
+                & &
+l.360 \end{eqnarray*}
                      
-A forbidden control sequence occurred in skipped text.
-This kind of error happens when you say `\if...' and forget
-the matching `\fi'. I've inserted a `\fi'; this might work.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.885 \end{eqnarray*}
+! Misplaced alignment tab character &.
+\reserved@a ->& &
+                  &
+l.360 \end{eqnarray*}
                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-! Extra alignment tab has been changed to \cr.
-<template> \egroup \endtemplate 
-                                
-l.885 \end{eqnarray*}
+! Misplaced alignment tab character &.
+\reserved@a ->& & &
+                   
+l.360 \end{eqnarray*}
                      
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-! Extra \or.
-\@@eqncr ...e \@eqcnt \def \reserved@a {& & &}\or 
-                                                  \def \reserved@a {& &}\or ...
-l.885 \end{eqnarray*}
+! Misplaced \cr.
+\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
+                                                  
+l.360 \end{eqnarray*}
                      
-I'm ignoring this; it doesn't match any \if.
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-! Extra \or.
-\@@eqncr ... {& & &}\or \def \reserved@a {& &}\or 
-                                                  \def \reserved@a {&}\else ...
-l.885 \end{eqnarray*}
+! Too many }'s.
+\endeqnarray ->\@@eqncr \egroup 
+                                \global \advance \c@equation \m@ne $$\@ignor...
+l.360 \end{eqnarray*}
                      
-I'm ignoring this; it doesn't match any \if.
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
 
-! Extra \else.
-\@@eqncr ...@a {& &}\or \def \reserved@a {&}\else 
-                                                  \let \reserved@a \@empty \...
-l.885 \end{eqnarray*}
-                     
-I'm ignoring this; it doesn't match any \if.
 
-! Missing $$ inserted.
-<to be read again> 
-                   \begingroup 
-l.885 \end{eqnarray*}
-                     
-Displays can use special alignments (like \eqalignno)
-only if nothing but the alignment itself is between $$'s.
-
-[7]
-
-! LaTeX Error: Too many columns in eqnarray environment.
+! LaTeX Error: \begin{document} ended by \end{eqnarray*}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.885 \end{eqnarray*}
+l.360 \end{eqnarray*}
                      
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-! Extra \fi.
-\@@eqncr ...mns in eqnarray environment}\@ehc \fi 
-                                                  \reserved@a \if@eqnsw \@eq...
-l.885 \end{eqnarray*}
+! Missing $ inserted.
+<inserted text> 
+                $
+l.360 \end{eqnarray*}
                      
-I'm ignoring this; it doesn't match any \if.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.360 \end{eqnarray*}
+                     
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
 
-Underfull \hbox (badness 10000) in alignment at lines 885--885
- [][][][]
- []
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.360 \end{eqnarray*}
+                     
+Things are pretty mixed up, but I think the worst is over.
 
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+<cp2122t_media/castor11.png, id=64, 1458.44875pt x 1092.08pt>
+File: cp2122t_media/castor11.png Graphic file (type png)
+<use cp2122t_media/castor11.png>
+Package pdftex.def Info: cp2122t_media/castor11.png  used on input line 492.
+(pdftex.def)             Requested size: 273.14923pt x 204.5312pt.
+ [2]
+<cp2122t_media/sierpinski1.png, id=82, 1078.0275pt x 1078.0275pt>
+File: cp2122t_media/sierpinski1.png Graphic file (type png)
+<use cp2122t_media/sierpinski1.png>
+Package pdftex.def Info: cp2122t_media/sierpinski1.png  used on input line 512.
+
+(pdftex.def)             Requested size: 182.09486pt x 182.09435pt.
+<cp2122t_media/sierpinski2.png, id=83, 1446.40375pt x 1337.99875pt>
+File: cp2122t_media/sierpinski2.png Graphic file (type png)
+<use cp2122t_media/sierpinski2.png>
+Package pdftex.def Info: cp2122t_media/sierpinski2.png  used on input line 520.
+
+(pdftex.def)             Requested size: 273.14923pt x 252.67078pt.
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+ [3 <./cp2122t_media/castor11.png> <./cp2122t_media/sierpinski1.png>]
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 6
+12.
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [4 <./cp2122t_media/sierpinski2.png>]
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+ [5]
+\openout5 = `cp2122t.ptb'.
+
+ [6] <xymatrix 2x2 191> [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 887.
+(hyperref)                removing `subscript' on input line 891.
 
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
-99.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 9
+03.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
  [8]
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
  [9]
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
-\openout4 = `cp2122t.ptb'.
+\openout5 = `cp2122t.ptb'.
 
  [10]
-\openout4 = `cp2122t.ptb'.
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1193 ...n}\mathrel{=}\alt{\Varid{zero}}{\succ }}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-\openout4 = `cp2122t.ptb'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.1194     \ensuremath
+                      {\Varid{out}\;\mathrm{0}\mathrel{=}i_1} \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-\openout4 = `cp2122t.ptb'.
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1211 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-\openout4 = `cp2122t.ptb'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.1211 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-\openout4 = `cp2122t.ptb'.
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1212 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
 
-\openout4 = `cp2122t.ptb'.
+! Missing } inserted.
+<inserted text> 
+                }
+l.1212 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
- [11]
-(./cp2122t.ind [12] [13
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1213 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \end{cases}
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1213 ...onj{\Varid{r}}{\Varid{c}}})} \end{cases}
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1217 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1217 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1218 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1218 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}})} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1219 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}})}
+                                                   \end{cases}
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1219 ...onj{\Varid{r}}{\Varid{c}}})} \end{cases}
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1223 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1223 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}}}} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1224 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}}
+                                                   \\
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1224 ...id{q}}{\conj{\Varid{r}}{\Varid{c}}}}} \\
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1225 ...Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}}
+                                                   \end{cases}
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1225 ...onj{\Varid{r}}{\Varid{c}}}}} \end{cases}
+                                                  
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1232 ...\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1233     \end{cases}
+                       \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1236 ...\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1237     \end{cases}
+                       \\
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing { inserted.
+<to be read again> 
+                   \begingroup 
+l.1240 ...\Varid{q}}{\conj{\Varid{r}}{\Varid{c}}}}
+                                                  
+A left brace was mandatory here, so I've put one in.
+You might want to delete and/or insert some corrections
+so that I will find a matching right brace soon.
+(If you're confused by all this, try typing `I}' now.)
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1241     \end{cases}
+                      
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1308 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1308 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1308 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.1308 
+       
+I'm guessing that you meant to end an alignment here.
+
+! Missing { inserted.
+<inserted text> 
+                {
+l.1308 
+       
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1308 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $$ inserted.
+<to be read again> 
+                   \tex_par:D 
+l.1308 
+       
+Displays can use special alignments (like \eqalignno)
+only if nothing but the alignment itself is between $$'s.
+
+[11]
+Overfull \vbox (52.18015pt too high) has occurred while \output is active []
 
 
-]) (./cp2122t.bbl) [14
+[12]
+! Misplaced alignment tab character &.
+\reserved@a ->&
+               
+l.1310 \qed
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
+                                                  
+l.1310 \qed
+           
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \noalign.
+\@xeqncr [#1]->\ifnum 0=`{\fi }\@@eqncr \noalign 
+                                                 {\penalty \@eqpen \vskip \j...
+l.1310 \qed
+           
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+! Misplaced alignment tab character &.
+<recently read> &
+                 
+l.1310 \qed
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1310 \qed
+           
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+\qed ->\\&\Box &
+                
+l.1310 \qed
+           
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->&
+                & &
+l.1311 \end{eqnarray*}
+                      
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& &
+                  &
+l.1311 \end{eqnarray*}
+                      
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+\reserved@a ->& & &
+                   
+l.1311 \end{eqnarray*}
+                      
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced \cr.
+\@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
+                                                  
+l.1311 \end{eqnarray*}
+                      
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Extra }, or forgotten $.
+\endeqnarray ->\@@eqncr \egroup 
+                                \global \advance \c@equation \m@ne $$\@ignor...
+l.1311 \end{eqnarray*}
+                      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1311 \end{eqnarray*}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+\openout5 = `cp2122t.ptb'.
+
+<xymatrix 3x2 236>
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+LaTeX Font Info:    Trying to load font information for OMS+ppl on input line 1
+404.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1404.
+
+
+Overfull \hbox (272.45952pt too wide) in paragraph at lines 1390--1404
+ [][] 
+ []
+
+
+Overfull \hbox (272.45952pt too wide) in paragraph at lines 1390--1404
+ [][] 
+ []
+
+
+Overfull \hbox (272.45952pt too wide) in paragraph at lines 1390--1404
+ [][] 
+ []
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+\openout5 = `cp2122t.ptb'.
+
+[13] (./cp2122t.ind [14]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.47     \subitem
+                  \
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.49 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[15
+
+
+]) (./cp2122t.bbl) [16
 
 ] (./cp2122t.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `cp2122t.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `cp2122t.out':
-(rerunfilecheck)             Before: 52DE7DC0D96D565890C828A31E533207;598
-(rerunfilecheck)             After:  7ECA9E1EF440DD2F0858BE0D2D0FD343;1719.
+Package rerunfilecheck Info: File `cp2122t.out' has not changed.
+(rerunfilecheck)             Checksum: 7ECA9E1EF440DD2F0858BE0D2D0FD343;1719.
  ) 
 Here is how much of TeX's memory you used:
- 14291 strings out of 478276
- 230564 string characters out of 5853014
- 546401 words of memory out of 5000000
- 32170 multiletter control sequences out of 15000+600000
- 507671 words of font info for 131 fonts, out of 8000000 for 9000
+ 17914 strings out of 478238
+ 275781 string characters out of 5850456
+ 651458 words of memory out of 5000000
+ 35718 multiletter control sequences out of 15000+600000
+ 513256 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,12n,77p,300b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.3.17} has been referenced but does not ex
-ist, replaced by a fixed one
+ 67i,21n,77p,3290b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+pdfTeX warning (dest): name{section.3.17} has been referenced but does not exis
+t, replaced by a fixed one
 
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/tex
-mf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/urw/co
-urier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
-sr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/
-fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/pal
-atino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></u
-sr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on cp2122t.pdf (14 pages, 725385 bytes).
+mi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/stmaryrd/stmary10.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a
+.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/
+urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a
+.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texmf-dist/fonts/type1
+/public/xypic/xyatip10.pfb></usr/share/texmf-dist/fonts/type1/public/xypic/xybt
+ip10.pfb>
+Output written on cp2122t.pdf (16 pages, 781265 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 63 named destinations out of 1000 (max. 500000)
  80 words of extra memory for PDF output out of 10000 (max. 10000000)
 
