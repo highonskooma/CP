@@ -205,6 +205,7 @@ import System.Process
 import Data.Char
 import Probability hiding (scale)
 import LTree (cataLTree, recLTree, dlLTree)
+import GHC.Integer.GMP.Internals (eqBigNat)
 
 main = undefined
 \end{code}
@@ -931,7 +932,11 @@ Parte-se de S1 e da lei da Recursividade Mútua:
     |either (c . zero) (c . succ) = either (l1 . id) (l2 . split (q) (split (r) (c)))| \end{cases}
 %
 \just\equiv{ EQ-+ }
-%
+\qed
+\end{eqnarray*}
+Segue:
+\begin{eqnarray*}
+\start
 \begin{cases}
     \begin{cases}
 	    |q . zero = h1 . id|\\
@@ -982,6 +987,7 @@ Parte-se de S1 e da lei da Recursividade Mútua:
 \end{cases}
 %
 \just\equiv{ Def-split (76)}
+%
 \begin{cases}
     \begin{cases}
 	    |q (zero x)  = h1 (id x)|\\
@@ -997,6 +1003,8 @@ Parte-se de S1 e da lei da Recursividade Mútua:
     \end{cases}
 \end{cases}
 %
+\just\equiv{}
+%
 \begin{cases}
     \begin{cases}
 	    |q 0  = h1 (id x)|\\
@@ -1011,47 +1019,88 @@ Parte-se de S1 e da lei da Recursividade Mútua:
         |c (x + 1) = l2 (q x, (r x , c x))|
     \end{cases}
 \end{cases}
-
+%
+\equiv{}
+%
+\begin{cases}
+    |q . in = either zero ((either id succ) . p1) . F (split (q) (split (r) (c)))| \\
+    |r . in = either zero (zero (succ . p1 . p2)) . F (split (q) (split (r) (c)))| \\
+    |c . in = either d (either d (decc . p1 . p2)) . F (split (q) (split (r) (c)))|
+\end{cases}
+\qed 
+\end{eqnarray*}
+\begin{eqnarray*}
+\start
+%
+\just\equiv{Recursividade Mútua (52)}
+%
+    |split (q) (split r c) = cata (split (either zero ((either id succ) . p1)) (split (either zero (either zero (succ . p1 . p2))) (either d (either d (decc . p1 . p2)))))|  
+%
+\just\equiv{Lei da Troca}
+%
+    |split (q) (split r c) = cata (split (either zero ((either id succ) . p1)) (either (split zero d) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
+%
+\just\equiv{}
+%
+    |split (q) (split r c) = cata (either (split zero (split zero d)) (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
+%
+\just\equiv{(split a b) = (a,b)}
+%
+    |split (q) (split r c) = cata (either ((zero , (zero , d))) (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
+%
+\just\equiv{ for b i = cata (either i b)}
+%
+    |split (q) (split r c) = for (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))) ((zero,(zero,d)))|  
+%
+\just\equiv{}
+%
+    |g d = split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))| 
+    |g d ((q,(r,0))) = (q+1,0,d)| 
 %
 \qed
 \end{eqnarray*}
 \subsection*{Problema 2}
+Apresentamos o seguinte diagrama da função both.
+
+\begin{eqnarray*}
+\xymatrix@@C=2cm@@R=2cm{
+     |LTree A|
+           \ar[d]_{|both|}
+           \ar[r]_{|out|}
+&
+     |Nat0 + LTree |{A^2} 
+           \ar[l]_-{|in|} 
+           \ar[d]^-{|F both = id +| {both^2}}
+\\
+     |Nat0|^{2} 
+&
+     |Nat0| + {|Nat0|^2}
+           \ar[l]^{|gene = either f g|}
+}
+\end{eqnarray*}
+
 
 \begin{code}
-alice :: Ord c => LTree c -> c
-alice = undefined
-
-bob :: Ord c => LTree c -> c
-bob   = undefined    
 
 both :: Ord d => LTree d -> (d, d)
 both = cataLTree (either f g) where
      f x = (x,x)
      g ((a,b),(c,d)) = (max b d, min a c) 
 
+alice :: Ord c => LTree c -> c
+alice (Leaf a) = a 
+alice (Fork (x,y)) = max (bob x) (bob y)
+ 
+bob :: Ord c => LTree c -> c
+bob (Leaf a) = a
+bob (Fork (x,y)) = min (alice x) (alice y)
 
+both' :: Ord d => LTree d -> (d,d)
+both' = split alice bob 
 
 \end{code}
 
-Apresentamos o seguinte diagrama da função both.
 
-\begin{eqnarray*}
-\xymatrix@@C=2cm@@R=2cm{
-     |LTree A|
-           \ar[dr]_{|alice|}
-&
-     |LTree A| 
-           \ar[l]_-{|id|}
-           \ar[r]^-{|id|}
-           \ar[d]^-{|both|}
-&
-     |LTree A|
-           \ar[dl]^{|bob|}
-\\
-&
-     |INT| \times |INT|
-}
-\end{eqnarray*}
 
 \subsection*{Problema 3}
 Biblioteca |LTree3|:
