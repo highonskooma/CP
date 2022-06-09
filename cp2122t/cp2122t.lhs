@@ -1020,8 +1020,26 @@ Segue:
     \end{cases}
 \end{cases}
 %
-\equiv{}
-%
+\end{eqnarray*}
+
+\newpage
+    Seja h = |either h1 h2| \\
+    Se c d n != 0 então h2 = |id . p1| \\
+    Se c d n = 0 então h2 = |succ . p1| \\
+    Logo h = |either zero ((either id succ) . p1)| \\
+
+    Seja k = |either k1 k2| \\
+    Se c d n != 0 então k2 = |succ . p1 . p2| \\
+    Se c d n = 0 então k2 = zero \\
+    Logo k = |either zero (either zero (succ . p1 . p2))| \\
+
+    Seja l = |either l1 l2| \\
+    Se c d n != 0 então |l2 = decc . p2 . p2| \\
+    Se c d n = 0 então |l2 = d| \\
+    Logo l = |either d (either d (decc . p2 . p2))| \\
+
+\begin{eqnarray*}
+\start
 \begin{cases}
     |q . in = either zero ((either id succ) . p1) . F (split (q) (split (r) (c)))| \\
     |r . in = either zero (zero (succ . p1 . p2)) . F (split (q) (split (r) (c)))| \\
@@ -1048,19 +1066,67 @@ Segue:
 %
     |split (q) (split r c) = cata (either ((zero , (zero , d))) (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
 %
-\just\equiv{ for b i = cata (either i b)}
+\just\equiv{ for b i = (cata (either i b))}
 %
     |split (q) (split r c) = for (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))) ((zero,(zero,d)))|  
 %
 \just\equiv{}
 %
     |g d = split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))| 
-    |g d ((q,(r,0))) = (q+1,0,d)| 
-%
-\qed
+
 \end{eqnarray*}
+\begin{eqnarray*}
+\start
+    |g d (q,(r,0)) = split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c))|
+%
+\just\equiv{}
+%
+    | ( (either id succ) . p1 (q,(r,c)), (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c)))| 
+%
+\just\equiv{}
+%
+    | ( (either id succ) (p1 (q,(r,c)), ( (either zero (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))| 
+%
+\just\equiv{}
+%
+    | ( (either id succ) q, ( (either zero (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))|
+%
+\end{eqnarray*}
+
+Temos: succ q , zero (q,(r,c)), d (q,(r,c)) \\
+Logo: g d (q,(r,0)) = (q+1,0,d) \\
+\\
+Para g d (q,(r,c+1)):
+
+\begin{eqnarray*}
+\start
+%
+    | ( (either id succ) . p1 (q,(r,c+1)), (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c+1)))| 
+%
+\just\equiv{}
+%
+    | ( (either id succ) (p1 (q,(r,c+1)), ( (either zero (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
+%
+\just\equiv{}
+%
+    | ( (either id succ) q, ( (either zero (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
+%
+\end{eqnarray*}
+\begin{eqnarray*}
+\start
+Temos: |id q , succ . p1 . p2 (q,(r,c+1)) , decc . p2 . p2 (q,(r,c+1))| 
+%
+\just\equiv
+%
+    | id q , succ r , decc c+1 |
+%
+ 
+\end{eqnarray*}
+Logo g d (q,(r,c+1)) = (q,r+1,c)
 \subsection*{Problema 2}
-Apresentamos o seguinte diagrama da função both.
+
+\subsubsection*{Alinea 1}
+Apresentamos o seguinte diagrama do catamorfismo both.
 
 \begin{eqnarray*}
 \xymatrix@@C=2cm@@R=2cm{
@@ -1079,22 +1145,181 @@ Apresentamos o seguinte diagrama da função both.
 }
 \end{eqnarray*}
 
+Percebemos que both pode ser então definida como |both = cataLTree (gene)| onde o gene é |either f g|, isto é uma alternativa.\\
+Passamos então para a definição de cada um dos casos, onde f ou g irão correr.\\
+Encontramos dois casos gerais:\\
+\tab- o caso de estarmos numa folha da arvore (f)\\
+\tab - o caso de estarmos numa bifurcação (g)\\
 
 \begin{code}
-
 both :: Ord d => LTree d -> (d, d)
 both = cataLTree (either f g) where
      f x = (x,x)
      g ((a,b),(c,d)) = (max b d, min a c) 
+\end{code}
 
+\subsubsection*{Alinea 2}
+Começamos por definir Alice e Bob como as funções recursivamente mutuas abaixo.\\
+
+\begin{code}
 alice :: Ord c => LTree c -> c
 alice (Leaf a) = a 
 alice (Fork (x,y)) = max (bob x) (bob y)
- 
+\end{code}
+
+\begin{code}
 bob :: Ord c => LTree c -> c
 bob (Leaf a) = a
 bob (Fork (x,y)) = min (alice x) (alice y)
+\end{code}
 
+
+Uma vez que estamos perante uma função que opera sobre LTree's, podemos inferir que:
+
+\begin{eqnarray*}
+\start
+\\
+    |in = either Leaf Fork| \\
+    |F X = A +| {X^2} \\
+    |F f = id +| {f^2} 
+\qed
+\end{eqnarray*}
+
+Sabemos que |both = split alice bob| e pela lei de recursividade mutua sabemos que 
+|split alice bob = cata(split h k)| \\
+Agora, a partir de Alice e Bob é possivel encontrarmos os seus genes respectivamente, h e k para definirmos |both=cata(split h k)|
+
+\begin{eqnarray*}
+\start
+
+|both = (split alice bob)|\\
+
+%
+\just\equiv{fokkinga |split a b = cata (split h k)| }
+\begin{cases} 
+    |alice . in = h . F (split alice bob)| \\
+    |bob . in = k . F (split alice bob)| 
+\end{cases}
+%
+\just\equiv{ Definição de in = [Leaf,Fork], Funtor de Ltree F f = id + {f^2} }
+%
+\begin{cases} 
+    |alice . [Leaf,Fork] = [h1,h2] . (id +| {|(split alice bob)|^2})\\
+    |bob . [Leaf,Fork] = [k1,k2] .  (id +| {|(split alice bob)|^2})
+\end{cases}
+%
+\just\equiv{ Fusão-+ }
+%
+\begin{cases} 
+    |[alice . Leaf, alice . Fork] = [h1,h2]  . (id +| {|(split alice bob)|^2})\\
+    |[bob . Leaf,bob . Fork] = [k1,k2]  .  (id +| {|(split alice bob)|^2})
+\end{cases}
+%
+\just\equiv{ Absorção-+ }
+%
+\begin{cases} 
+    |[alice . Leaf, alice . Fork] = [h1 . id ,h2 . | {|(split alice bob)|^2}]  \\
+    |[bob . Leaf,bob . Fork] = [k1 . id ,k2 . | {|(split alice bob)|^2}] 
+\end{cases}
+%
+\just\equiv{ EQ-+ }
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice . Leaf = h1 . id | \\
+        |alice . Fork = h2 . | {|(split alice bob)|^2}  
+    \end{cases}\\
+    \begin{cases} 
+        |bob . Leaf = k1 . id|  \\
+        |bob . Fork = k2 . | {|(split alice bob)|^2}
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ f² = f x f}
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice . Leaf = h1 . id | \\
+        |alice . Fork = h2 . ((split alice bob) >< (split alice bob))|  
+    \end{cases}\\
+    \begin{cases} 
+        |bob . Leaf = k1 . id|  \\
+        |bob . Fork = k2 . ((split alice bob) >< (split alice bob))|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Igualdade Extensional, Def-Comp}
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice(Leaf x) = h1(id x)| \\
+        |alice(Fork (a,b)) = h2 ( ((split alice bob) >< (split alice bob)) (a,b))|  
+    \end{cases}\\
+    \begin{cases} 
+        |bob(Leaf x) = k1 (id x)|  \\
+        |bob(Fork (a,b)) = k2 ( ((split alice bob) >< (split alice bob)) (a,b))|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ Def-x (77)}
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice(Leaf x) = h1(id x)| \\
+        |alice(Fork (a,b)) = h2 ( (split alice bob) a , (split alice bob) b)|  
+    \end{cases}\\
+    \begin{cases} 
+        |bob(Leaf x) = k1 (id x)|  \\
+        |bob(Fork (a,b)) = k2 ( (split alice bob) a , (split alice bob) b)|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{} \\ 
+ Sabemos que both = |split alice bob| = (a,b)\\ 
+ Podemos então perceber que |split alice bob| estão a ser aplicados à arvore da direita e da esquerda, e ambos vão produzir um par como resultado\\ 
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice(Leaf x) = h1 x| \\
+        |alice(Fork (a,b)) = h2 ((a_esq,b_esq), (a_dir,b_dir))|  
+    \end{cases}\\
+    \begin{cases} 
+        |bob(Leaf x) = k1 x|  \\
+        |bob(Fork (a,b)) = k2 ((a_esq,b_esq), (a_dir,b_dir))|
+    \end{cases}
+\end{cases}
+%
+\just\equiv{ }
+%
+\begin{cases} 
+    \begin{cases} 
+        |alice(Leaf x) = id x| \\
+        |alice(Fork (a,b)) = ((uncurry max) . (split (p2 . p1) (p2 . p2))) ((a_esq,b_esq), (a_dir,b_dir))|  
+    \end{cases}\\
+    \begin{cases} 
+        |bob(Leaf x) = id x|  \\
+        |bob(Fork (a,b)) = ((uncurry min) . (split (p1 . p1) (p1 . p2))) ((a_esq,b_esq), (a_dir,b_dir))|  
+    \end{cases}
+\end{cases}
+\end{eqnarray*}
+Temos por fim o gene h=[h1,h2] do catamorfismo Alice\\
+\begin{eqnarray*}
+    \begin{cases} 
+        |h1 x = id x|\\
+        |h2 ((a,b),(c,d)) = ((uncurry max) . (split (p2 . p1) (p2 . p2)))((a,b),(c,d)) = max b d|
+    \end{cases}
+\end{eqnarray*}
+E chegamos também ao gene k=[k1,k2] do catamorfismo bob\\
+\begin{eqnarray*}
+    \begin{cases} 
+        |k1 x = id x|\\
+        |k2 ((a,b),(c,d))= ((uncurry min) . (split (p1 . p1) (p1 . p2)))((a,b),(c,d)) = min a c|
+    \end{cases}
+\end{eqnarray*}
+
+É possivel agora definir both como o catamorfismo do split dos genes de Alice e Bob tal como estã definido abaixo:\\
+
+\begin{code}
 both' :: Ord d => LTree d -> (d,d)
 both' = cataLTree (split h k)  where
     h = either h1 h2 where
@@ -1103,7 +1328,6 @@ both' = cataLTree (split h k)  where
     k = either k1 k2 where 
         k1 x = x
         k2 ((a,b),(c,d)) = min a c  
-
 \end{code}
 
 
