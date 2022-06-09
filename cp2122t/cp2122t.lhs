@@ -1096,7 +1096,13 @@ bob (Leaf a) = a
 bob (Fork (x,y)) = min (alice x) (alice y)
 
 both' :: Ord d => LTree d -> (d,d)
-both' = split alice bob 
+both' = cataLTree (split h k)  where
+    h = either h1 h2 where
+        h1 x = x
+        h2 ((a,b),(c,d)) = max b d
+    k = either k1 k2 where 
+        k1 x = x
+        k2 ((a,b),(c,d)) = min a c  
 
 \end{code}
 
