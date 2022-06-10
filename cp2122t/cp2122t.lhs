@@ -219,7 +219,6 @@ ed (n,0) = Nothing
 ed (n,d+1) = (Just . p1) (aux d n)
 \end{code}
 dá erro quando o denominador |d| é zero, recorrendo à função auxiliar seguinte
-\end{eqnarray*}
 nos outros casos, paramétrica em |d|: 
 \begin{code}
 aux d = split (q d) (split (r d) (c d))
@@ -896,115 +895,125 @@ simples e elegantes.
 Uma vez que estamos perante uma função que opera sobre naturais, podemos inferir que:
 \begin{eqnarray*}
 \start
-\\
-    |in = either zero succ| \\
+
+    |in = either (const 0) succ| \\
+&
     |out 0 = i1| \\
-    |out n+1 = i2 n| \\
+&    
+    |out (n+1) = i2 n| \\
+&    
     |F X = 1 + X| \\
+&    
     |F f = id + f| 
-\qed
+
 \end{eqnarray*}
-Parte-se de S1 e da lei da Recursividade Mútua:
+Parte-se de S1 e da lei da Recursividade Mútua: 
+
 \begin{eqnarray*}
 \start
-\begin{cases} |q . in = h . F (split (q) (split (r) (c)))| \\ 
+
+\begin{cases} 
+    |q . in = h . F (split (q) (split (r) (c)))| \\ 
     |r . in = k . F ((split (q) (split (r) (c)))| \\
-    |c . in = l . F ((split (q) (split (r) (c)))| \end{cases}
-%
-\just\equiv{ |split (q) (split r c) = cata (split (h) (split k l))| }
-%
+    |c . in = l . F ((split (q) (split (r) (c)))| 
+\end{cases}
+&
+\equiv{ |split (q) (split r c) = cata (split (h) (split k l))| }
+&
 \just\equiv{ Definição de in, Funtor dos Naturais }
-%
-\begin{cases} |q . either zero succ = h . (id + split (q) (split (r) (c)))| \\ 
-    |r . either zero succ = k . (id + (split (q) (split (r) (c))))| \\
-    |c . either zero succ = l . (id + (split (q) (split (r) (c))))| \end{cases}
-%
+
+\begin{cases} 
+    |q . either (const 0) succ = h . (id + split (q) (split (r) (c)))| \\ 
+    |r . either (const 0) succ = k . (id + (split (q) (split (r) (c))))| \\
+    |c . either (const 0) succ = l . (id + (split (q) (split (r) (c))))| 
+\end{cases}
+
 \just\equiv{ Fusão-+ }
-%
-\begin{cases} |either (q . zero) (q . succ) = either h1 h2 . (id + split (q) (split (r) (c)))| \\ 
-    |either (r . zero) (r . succ) = either k1 k2 . (id + (split (q) (split (r) (c))))| \\
-    |either (c . zero) (c . succ) = either l1 l2 . (id + (split (q) (split (r) (c))))| \end{cases}
-%
+
+\begin{cases} 
+    |either (q . const 0) (q . succ) = either h1 h2 . (id + split (q) (split (r) (c)))| \\ 
+    |either (r . const 0) (r . succ) = either k1 k2 . (id + (split (q) (split (r) (c))))| \\
+    |either (c . const 0) (c . succ) = either l1 l2 . (id + (split (q) (split (r) (c))))| 
+\end{cases}
+
 \just\equiv{ Absorção-+}
-%
-\begin{cases} |either (q . zero) (q . succ) = either (h1 . id) (h2 . split (q) (split (r) (c)))| \\ 
-    |either (r . zero) (r . succ) = either (k1 . id) (k2 . split (q) (split (r) (c)))| \\
-    |either (c . zero) (c . succ) = either (l1 . id) (l2 . split (q) (split (r) (c)))| \end{cases}
-%
+
+\begin{cases} |either (q . const 0) (q . succ) = either (h1 . id) (h2 . split (q) (split (r) (c)))| \\ 
+    |either (r . const 0) (r . succ) = either (k1 . id) (k2 . split (q) (split (r) (c)))| \\
+    |either (c . const 0) (c . succ) = either (l1 . id) (l2 . split (q) (split (r) (c)))| \end{cases}
+
+\newpage
+
 \just\equiv{ EQ-+ }
-\qed
-\end{eqnarray*}
-Segue:
-\begin{eqnarray*}
-\start
+
 \begin{cases}
     \begin{cases}
-	    |q . zero = h1 . id|\\
+	    |q . const 0 = h1 . id|\\
         |q . succ = h2 . split (q) (split r c)| 
     \end{cases} \\
     \begin{cases}
-        |r . zero = k1 . id|\\ 
+        |r . const 0 = k1 . id|\\ 
         |r . succ = k2 . split (q) (split r c)| 
     \end{cases} \\
     \begin{cases}
-        |c. zero = l1 . id|\\
+        |c. const 0 = l1 . id|\\
         |c . succ = l2 . split (q) (split r c)|
     \end{cases}
 \end{cases}
-%
+
 \just\equiv { Igualdade Extensional (71)}
-%
+
 \begin{cases}
     \begin{cases}
-	    |(q . zero) x  = (h1 . id) x|\\
+	    |(q . const 0) x  = (h1 . id) x|\\
         |(q . succ) x = (h2 . split (q) (split r c)) x| 
     \end{cases} \\
     \begin{cases}
-        |(r . zero) x = (k1 . id) x|\\ 
+        |(r . const 0) x = (k1 . id) x|\\ 
         |(r . succ) x = (k2 . split (q) (split rc)) x| 
     \end{cases} \\
     \begin{cases}
-        |(c. zero) x = (l1 . id) x|\\
+        |(c. const 0) x = (l1 . id) x|\\
         |(c . succ) x= (l2 . split (q) (split r c)) x|
     \end{cases}
 \end{cases}
-%
+
 \just\equiv{ Def-comp (72)}
-%
+
 \begin{cases}
     \begin{cases}
-	    |q (zero x)  = h1 (id x)|\\
+	    |q ((const 0) x)  = h1 (id x)|\\
         |q (succ x) = h2 ((split (q) (split r c) x))| 
     \end{cases} \\
     \begin{cases}
-        |r (zero x) = k1 (id x)|\\ 
+        |r ((const 0) x) = k1 (id x)|\\ 
         |r (succ x) = k2 ((split (q) (split rc) x))| 
     \end{cases} \\
     \begin{cases}
-        |c (zero x) = l1 (id x)|\\
+        |c ((const 0) x) = l1 (id x)|\\
         |c (succ x)= l2 ((split (q) (split r c) x))|
     \end{cases}
 \end{cases}
-%
+
 \just\equiv{ Def-split (76)}
-%
+
 \begin{cases}
     \begin{cases}
-	    |q (zero x)  = h1 (id x)|\\
+	    |q ((const 0) x)  = h1 (id x)|\\
         |q (succ x) = h2 (q x, (r x, c x))| 
     \end{cases} \\
     \begin{cases}
-        |r (zero x) = k1 (id x)|\\ 
+        |r ((const 0) x) = k1 (id x)|\\ 
         |r (succ x) = k2 (q x,(r x , c x))| 
     \end{cases} \\
     \begin{cases}
-        |c (zero x) = l1 (id x)|\\
+        |c ((const 0) x) = l1 (id x)|\\
         |c (succ x)= l2 (q x, (r x , c x))|
     \end{cases}
 \end{cases}
-%
-\just\equiv{}
-%
+&
+\equiv
+&
 \begin{cases}
     \begin{cases}
 	    |q 0  = h1 (id x)|\\
@@ -1018,82 +1027,76 @@ Segue:
         |c 0 = l1 (id x)|\\
         |c (x + 1) = l2 (q x, (r x , c x))|
     \end{cases}
-\end{cases}
-%
-\end{eqnarray*}
 
-\newpage
+\end{cases}
+
+\end{eqnarray*}
+\begin{eqnarray*}
+
     Seja h = |either h1 h2| \\
     Se c d n != 0 então h2 = |id . p1| \\
     Se c d n = 0 então h2 = |succ . p1| \\
-    Logo h = |either zero ((either id succ) . p1)| \\
+    Logo h = |either (const 0) ((either id succ) . p1)| \\
 
     Seja k = |either k1 k2| \\
     Se c d n != 0 então k2 = |succ . p1 . p2| \\
-    Se c d n = 0 então k2 = zero \\
-    Logo k = |either zero (either zero (succ . p1 . p2))| \\
+    Se c d n = 0 então k2 = (const 0) \\
+    Logo k = |either (const 0) (either (const 0) (succ . p1 . p2))| \\
 
     Seja l = |either l1 l2| \\
     Se c d n != 0 então |l2 = decc . p2 . p2| \\
-    Se c d n = 0 então |l2 = d| \\
-    Logo l = |either d (either d (decc . p2 . p2))| \\
+    Se c d n = 0 então |l2 = (const d)| \\    
+    Logo l = |either (const d) (either (const d) (decc . p2 . p2))| \\
 
-\begin{eqnarray*}
-\start
 \begin{cases}
-    |q . in = either zero ((either id succ) . p1) . F (split (q) (split (r) (c)))| \\
-    |r . in = either zero (zero (succ . p1 . p2)) . F (split (q) (split (r) (c)))| \\
-    |c . in = either d (either d (decc . p1 . p2)) . F (split (q) (split (r) (c)))|
+    |q . in = either (const 0) ((either id succ) . p1) . F (split (q) (split (r) (c)))| \\
+    |r . in = either (const 0) (const 0 (succ . p1 . p2)) . F (split (q) (split (r) (c)))| \\
+    |c . in = either (const d) (either (const d) (decc . p1 . p2)) . F (split (q) (split (r) (c)))|
 \end{cases}
-\qed 
-\end{eqnarray*}
-\begin{eqnarray*}
-\start
-%
+ 
 \just\equiv{Recursividade Mútua (52)}
-%
-    |split (q) (split r c) = cata (split (either zero ((either id succ) . p1)) (split (either zero (either zero (succ . p1 . p2))) (either d (either d (decc . p1 . p2)))))|  
-%
+
+    |split (q) (split r c) = cata (split (either (const 0) ((either id succ) . p1)) (split (either (const 0) (either (const 0) (succ . p1 . p2))) (either (const d) (either (const d) (decc . p1 . p2)))))|  
+
 \just\equiv{Lei da Troca}
-%
-    |split (q) (split r c) = cata (split (either zero ((either id succ) . p1)) (either (split zero d) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
-%
-\just\equiv{}
-%
-    |split (q) (split r c) = cata (either (split zero (split zero d)) (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
-%
+    |split (q) (split r c) = cata (split (either (const 0) ((either id succ) . p1)) (either (split (const 0) (const d)) (split (either (const 0) (succ . p1 . p2)) (either (const d) (decc . p1 . p2)))))|  
+
+\equiv
+
+    |split (q) (split r c) = cata (either (split (const 0) (split (const 0) (const d))) (split ((either id succ) . p1) (split (either (const 0) (succ . p1 . p2)) (either (const d) (decc . p1 . p2)))))|  
+
 \just\equiv{(split a b) = (a,b)}
 %
-    |split (q) (split r c) = cata (either ((zero , (zero , d))) (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))))|  
+    |split (q) (split r c) = cata (either ((const (0 , (0 , d)))) (split ((either id succ) . p1) (split (either (const 0) (succ . p1 . p2)) (either (const d) (decc . p1 . p2)))))|  
 %
 \just\equiv{ for b i = (cata (either i b))}
 %
-    |split (q) (split r c) = for (split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))) ((zero,(zero,d)))|  
+    |split (q) (split r c) = for (split ((either id succ) . p1) (split (either (const 0) (succ . p1 . p2)) (either (const d) (decc . p1 . p2)))) ((const (0 , (0 , d))))))|  
 %
 \just\equiv{}
 %
-    |g d = split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2)))| 
+    |g d = split ((either id succ) . p1) (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2)))| 
 
 \end{eqnarray*}
 \begin{eqnarray*}
 \start
-    |g d (q,(r,0)) = split ((either id succ) . p1) (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c))|
+    |g d (q,(r,0)) = split ((either id succ) . p1) (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c))|
 %
 \just\equiv{}
 %
-    | ( (either id succ) . p1 (q,(r,c)), (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c)))| 
+    | ( (either id succ) . p1 (q,(r,c)), (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c)))| 
 %
 \just\equiv{}
 %
-    | ( (either id succ) (p1 (q,(r,c)), ( (either zero (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))| 
+    | ( (either id succ) (p1 (q,(r,c)), ( (either const 0 (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))| 
 %
 \just\equiv{}
 %
-    | ( (either id succ) q, ( (either zero (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))|
+    | ( (either id succ) q, ( (either const 0 (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))|
 %
 \end{eqnarray*}
 
-Temos: succ q , zero (q,(r,c)), d (q,(r,c)) \\
+Temos: succ q , const 0 (q,(r,c)), d (q,(r,c)) \\
 Logo: g d (q,(r,0)) = (q+1,0,d) \\
 \\
 Para g d (q,(r,c+1)):
@@ -1101,15 +1104,15 @@ Para g d (q,(r,c+1)):
 \begin{eqnarray*}
 \start
 %
-    | ( (either id succ) . p1 (q,(r,c+1)), (split (either zero (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c+1)))| 
+    | ( (either id succ) . p1 (q,(r,c+1)), (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c+1)))| 
 %
 \just\equiv{}
 %
-    | ( (either id succ) (p1 (q,(r,c+1)), ( (either zero (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
+    | ( (either id succ) (p1 (q,(r,c+1)), ( (either const 0 (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
 %
 \just\equiv{}
 %
-    | ( (either id succ) q, ( (either zero (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
+    | ( (either id succ) q, ( (either const 0 (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
 %
 \end{eqnarray*}
 \begin{eqnarray*}
@@ -1355,14 +1358,16 @@ hyloLTree3 f g = cataLTree3 f . anaLTree3 g
 Genes do hilomorfismo |sierpinski|:
 \begin{code}
 g1 = undefined
-g2 = undefined
-{-
-g2 (t,0) = t
-g2 (((x,y),s),n+1) = i2((t1,t2),t3) where
-     t1 = (((x,y),fromIntegral s/2),n) 
-     t2 = (((x,y+s/2),fromIntegral s/2),n) 
-     t3 = (((x+s/2,y),fromIntegral s/2),n) 
--}
+
+g2 (t, 0) = i1 t
+g2 (((x , y), s), n + 1) = i2 ((t1 , t2 ), t3 ) where
+     t1 = (((x,y), div s 2),n) 
+     t2 = (((x,y+ div s 2), div  s 2),n) 
+     t3 = (((x+ div s 2,y),div s 2),n) 
+
+
+
+
 \end{code}
 
 \subsection*{Problema 4}
