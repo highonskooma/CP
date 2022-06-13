@@ -1185,7 +1185,7 @@ Uma vez que estamos perante uma função que opera sobre LTree's, podemos inferi
     |F f = id +| {f^2} 
 
 \end{eqnarray*}
-
+\newpage
 Sabemos que |both = split alice bob| e pela lei de recursividade mutua sabemos que 
 |split alice bob = cata(split h k)| \\
 Agora, a partir de Alice e Bob é possivel encontrarmos os seus genes respectivamente, h e k para definirmos |both=cata(split h k)|
@@ -1345,7 +1345,7 @@ Apresentamos o diagrama do hilomorfismo em questão:\\
            \ar[d]_{|geraSierp = ( g2)|}
            \ar[r]^{|g2|}
 &
-     |Tri| + |(Tri * Nat0)|^3  
+     |Tri| + |(Tri| \times |Nat0)|^3  
            \ar[d]^-{|F (anaList g2) = id +| {|(anaList g2)|^3}}
 \\
      |LTree3 A|
@@ -1358,7 +1358,7 @@ Apresentamos o diagrama do hilomorfismo em questão:\\
 \\
     |[Tri]| 
 &
-    |A| + {|X|^3}
+    |A| + {|Tri|^3}
            \ar[l]^{|g1|}
 }
 \end{eqnarray*}
@@ -1392,9 +1392,9 @@ O gene do catamorfismo (g1) vai fazer uma travessia recursiva por todos esses po
 da fusão de outras listas. 
 
 O gene do anamorfismo (g2) tem um par Tri,natural como argumento. 
-Dá origem a três pares do mesmo tipo, cada um com as devidas coordenadas dos triagulos a que vão dar origem.
+Dá origem a três pares do mesmo tipo, cada um com as devidas coordenadas dos triângulos a que vão dar origem.
 Se o número natural for zero, retorna apenas um Tri. 
-O functor chama o anamorfismo recursivamente, para ca um dos 3 nodos. 
+O functor chama o anamorfismo recursivamente, para cada um dos 3 nodos. 
 \begin{code}
 g1 = either h k where
     h x = [x]

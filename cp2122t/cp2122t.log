@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.14)  13 JUN 2022 22:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.14)  13 JUN 2022 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5755,6 +5755,7 @@ l.1499 \end{eqnarray*}
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
+[14]
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -6327,7 +6328,6 @@ l.1519 \begin{cases}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[14]
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -8085,7 +8085,7 @@ w/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pf
 b></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texmf
 -dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texmf-dist/fonts/type1/
 public/xypic/xybtip10.pfb>
-Output written on cp2122t.pdf (20 pages, 830433 bytes).
+Output written on cp2122t.pdf (20 pages, 830460 bytes).
 PDF statistics:
  491 PDF objects out of 1000 (max. 8388607)
  383 compressed objects within 4 object streams

@@ -1497,7 +1497,7 @@ Uma vez que estamos perante uma função que opera sobre LTree's, podemos inferi
     \ensuremath{\Conid{F}\;\Varid{f}\mathrel{=}\Varid{id}\mathbin{+}} {f^2} 
 
 \end{eqnarray*}
-
+\newpage
 Sabemos que \ensuremath{\Varid{both}\mathrel{=}\conj{\Varid{alice}}{\Varid{bob}}} e pela lei de recursividade mutua sabemos que 
 \ensuremath{\conj{\Varid{alice}}{\Varid{bob}}\mathrel{=}\cata{\conj{\Varid{h}}{\Varid{k}}}} \\
 Agora, a partir de Alice e Bob é possivel encontrarmos os seus genes respectivamente, h e k para definirmos \ensuremath{\Varid{both}\mathrel{=}\cata{\conj{\Varid{h}}{\Varid{k}}}}
@@ -1677,7 +1677,7 @@ Apresentamos o diagrama do hilomorfismo em questão:\\
            \ar[d]_{\ensuremath{\Varid{geraSierp}\mathrel{=}(g_2 )}}
            \ar[r]^{\ensuremath{g_2 }}
 &
-     \ensuremath{\Conid{Tri}} + \ensuremath{(\Conid{Tri}\mathbin{*}\N_0)}^3  
+     \ensuremath{\Conid{Tri}} + \ensuremath{(\Conid{Tri}} \times \ensuremath{\N_0)}^3  
            \ar[d]^-{\ensuremath{\Conid{F}\;\anaList{g_2 }\mathrel{=}\Varid{id}\mathbin{+}} {\ensuremath{\anaList{g_2 }}^3}}
 \\
      \ensuremath{\mathsf{LTree3}\;\Conid{A}}
@@ -1690,7 +1690,7 @@ Apresentamos o diagrama do hilomorfismo em questão:\\
 \\
     \ensuremath{[\mskip1.5mu \Conid{Tri}\mskip1.5mu]} 
 &
-    \ensuremath{\Conid{A}} + {\ensuremath{\Conid{X}}^3}
+    \ensuremath{\Conid{A}} + {\ensuremath{\Conid{Tri}}^3}
            \ar[l]^{\ensuremath{g_1 }}
 }
 \end{eqnarray*}
@@ -1733,9 +1733,9 @@ O gene do catamorfismo (g1) vai fazer uma travessia recursiva por todos esses po
 da fusão de outras listas. 
 
 O gene do anamorfismo (g2) tem um par Tri,natural como argumento. 
-Dá origem a três pares do mesmo tipo, cada um com as devidas coordenadas dos triagulos a que vão dar origem.
+Dá origem a três pares do mesmo tipo, cada um com as devidas coordenadas dos triângulos a que vão dar origem.
 Se o número natural for zero, retorna apenas um Tri. 
-O functor chama o anamorfismo recursivamente, para ca um dos 3 nodos. 
+O functor chama o anamorfismo recursivamente, para cada um dos 3 nodos. 
 \begin{hscode}\SaveRestoreHook
 \column{B}{@{}>{\hspre}l<{\hspost}@{}}%
 \column{5}{@{}>{\hspre}l<{\hspost}@{}}%
