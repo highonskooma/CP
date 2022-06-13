@@ -152,15 +152,11 @@
 
 \begin{center}\large
 \begin{tabular}{ll}
-\textbf{Grupo} nr. & 99 (preencher)
+\textbf{Grupo} nr. & 18 
 \\\hline
-a11111 & Nome1 (preencher)
+a89540 & Maria João da Silva Cruz Saraiva Moreira
 \\
-a22222 & Nome2 (preencher)
-\\
-a33333 & Nome3 (preencher)
-\\
-a44444 & Nome4 (preencher, se aplicável, ou apagar)
+a84671 & João Guilherme Rodrigues Reis 
 \end{tabular}
 \end{center}
 
@@ -1072,26 +1068,28 @@ Parte-se de S1 e da lei da Recursividade Mútua:
 \just\equiv{ for b i = (cata (either i b))}
 %
     |split (q) (split r c) = for (split ((either id succ) . p1) (split (either (const 0) (succ . p1 . p2)) (either (const d) (decc . p1 . p2)))) ((const (0 , (0 , d))))))|  
-%
-\just\equiv{}
-%
+
+\equiv
+
     |g d = split ((either id succ) . p1) (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2)))| 
 
 \end{eqnarray*}
+Para g d (q,(r,0)):
+
 \begin{eqnarray*}
 \start
     |g d (q,(r,0)) = split ((either id succ) . p1) (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c))|
-%
-\just\equiv{}
-%
+
+\equiv
+&
     | ( (either id succ) . p1 (q,(r,c)), (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c)))| 
-%
-\just\equiv{}
-%
+
+\equiv
+&
     | ( (either id succ) (p1 (q,(r,c)), ( (either const 0 (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))| 
-%
-\just\equiv{}
-%
+
+\equiv
+&
     | ( (either id succ) q, ( (either const 0 (succ . p1 . p2)) (q,(r,c)), (either d (decc . p1 . p2)) (q,(r,c)))|
 %
 \end{eqnarray*}
@@ -1105,27 +1103,28 @@ Para g d (q,(r,c+1)):
 \start
 %
     | ( (either id succ) . p1 (q,(r,c+1)), (split (either const 0 (succ . p1 . p2)) (either d (decc . p1 . p2))) (q,(r,c+1)))| 
-%
-\just\equiv{}
-%
+
+\equiv
+&
     | ( (either id succ) (p1 (q,(r,c+1)), ( (either const 0 (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
-%
-\just\equiv{}
-%
+
+\equiv
+&
     | ( (either id succ) q, ( (either const 0 (succ . p1 . p2)) (q,(r,c+1)), (either d (decc . p1 . p2)) (q,(r,c+1)))| 
 %
 \end{eqnarray*}
 \begin{eqnarray*}
 \start
 Temos: |id q , succ . p1 . p2 (q,(r,c+1)) , decc . p2 . p2 (q,(r,c+1))| 
-%
-\just\equiv
-%
+
+\equiv
+&
     | id q , succ r , decc c+1 |
 %
  
 \end{eqnarray*}
 Logo g d (q,(r,c+1)) = (q,r+1,c)
+\newpage
 \subsection*{Problema 2}
 
 \subsubsection*{Alinea 1}
@@ -1148,7 +1147,7 @@ Apresentamos o seguinte diagrama do catamorfismo both.
 }
 \end{eqnarray*}
 
-Percebemos que both pode ser então definida como |both = cataLTree (gene)| onde o gene é |either f g|, isto é uma alternativa.\\
+Sabemos que both pode ser definida como |both = cataLTree (gene)| onde o gene é |either f g|, isto é uma alternativa.\\
 Passamos então para a definição de cada um dos casos, onde f ou g irão correr.\\
 Encontramos dois casos gerais:\\
 \tab- o caso de estarmos numa folha da arvore (f)\\
@@ -1181,11 +1180,10 @@ Uma vez que estamos perante uma função que opera sobre LTree's, podemos inferi
 
 \begin{eqnarray*}
 \start
-\\
     |in = either Leaf Fork| \\
     |F X = A +| {X^2} \\
     |F f = id +| {f^2} 
-\qed
+
 \end{eqnarray*}
 
 Sabemos que |both = split alice bob| e pela lei de recursividade mutua sabemos que 
@@ -1276,11 +1274,15 @@ Agora, a partir de Alice e Bob é possivel encontrarmos os seus genes respectiva
         |bob(Fork (a,b)) = k2 ( (split alice bob) a , (split alice bob) b)|
     \end{cases}
 \end{cases}
-%
-\just\equiv{} \\ 
- Sabemos que both = |split alice bob| = (a,b)\\ 
- Podemos então perceber que |split alice bob| estão a ser aplicados à arvore da direita e da esquerda, e ambos vão produzir um par como resultado\\ 
-%
+
+\end{eqnarray*}
+\newpage
+\begin{eqnarray*}
+\start
+
+Sabemos que both = |split alice bob| = (a,b)\\ 
+Podemos então perceber que |split alice bob| estão a ser aplicados à arvore da direita e da esquerda, e ambos vão produzir um par como resultado\\ 
+
 \begin{cases} 
     \begin{cases} 
         |alice(Leaf x) = h1 x| \\
@@ -1291,9 +1293,9 @@ Agora, a partir de Alice e Bob é possivel encontrarmos os seus genes respectiva
         |bob(Fork (a,b)) = k2 ((a_esq,b_esq), (a_dir,b_dir))|
     \end{cases}
 \end{cases}
-%
-\just\equiv{ }
-%
+
+\equiv 
+
 \begin{cases} 
     \begin{cases} 
         |alice(Leaf x) = id x| \\
@@ -1336,6 +1338,32 @@ both' = cataLTree (split h k)  where
 
 
 \subsection*{Problema 3}
+Apresentamos o diagrama do hilomorfismo em questão:\\
+\begin{eqnarray*}
+\xymatrix@@C=2cm@@R=2cm{
+     |Tri| \times |Nat0|
+           \ar[d]_{|geraSierp = ( g2)|}
+           \ar[r]^{|g2|}
+&
+     |Tri| + |(Tri * Nat0)|^3  
+           \ar[d]^-{|F (anaList g2) = id +| {|(anaList g2)|^3}}
+\\
+     |LTree3 A|
+           \ar[d]_{|folhasSierp = (cata g1)|}
+           \ar[r]^{|out|}
+&
+     |A| + {|(LTree3 A)|^3}
+           \ar[l]^{|in|}
+           \ar[d]^{|F (cata g1) = id| + |(cata g1)|^3}
+\\
+    |[Tri]| 
+&
+    |A| + {|X|^3}
+           \ar[l]^{|g1|}
+}
+\end{eqnarray*}
+
+
 Biblioteca |LTree3|:
 
 \begin{code}
@@ -1345,9 +1373,9 @@ inLTree3 = either Tri f where
 outLTree3 (Tri t) = i1 t
 outLTree3 (Nodo a b c) =  i2 ((a,b),c)
 
-baseLTree3 f g = undefined
+baseLTree3 f g = f -|- ((g >< g) >< g)
 
-recLTree3 f = id -|- ((f >< f) >< f)
+recLTree3 f = baseLTree3 id f
 
 cataLTree3 f = f . recLTree3 (cataLTree3 f) . outLTree3
 
@@ -1356,8 +1384,23 @@ anaLTree3 f = inLTree3 . recLTree3 (anaLTree3 f) . f
 hyloLTree3 f g = cataLTree3 f . anaLTree3 g
 \end{code}
 Genes do hilomorfismo |sierpinski|:
+
+O catamorfismo recebe como argumento uma LTree3, o out é responsável por desmembrar a árvore,
+e o functor vai aplicar recursivamente o catamorfismo até termos varios triplos de triplos com todas as 
+Tri necessárias para desenhar o fractal.
+O gene do catamorfismo (g1) vai fazer uma travessia recursiva por todos esses pontos e criar uma lista final atravez
+da fusão de outras listas. 
+
+O gene do anamorfismo (g2) tem um par Tri,natural como argumento. 
+Dá origem a três pares do mesmo tipo, cada um com as devidas coordenadas dos triagulos a que vão dar origem.
+Se o número natural for zero, retorna apenas um Tri. 
+O functor chama o anamorfismo recursivamente, para ca um dos 3 nodos. 
 \begin{code}
-g1 = undefined
+g1 = either h k where
+    h x = [x]
+    k (([a],[b]),c) = a : b : c
+    k ((a:as,b:bs),c) = a : b : k ((as,bs),c) 
+     
 
 g2 (t, 0) = i1 t
 g2 (((x , y), s), n + 1) = i2 ((t1 , t2 ), t3 ) where
@@ -1369,7 +1412,7 @@ g2 (((x , y), s), n + 1) = i2 ((t1 , t2 ), t3 ) where
 
 
 \end{code}
-
+\newpage
 \subsection*{Problema 4}
 
 \begin{code}
